@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { Menu, Switch } from 'antd';
+
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -10,6 +11,7 @@ function getItem(label, key, icon, children, type) {
     type,
   };
 }
+
 const items = [
   getItem('Admin', 'sub1', <MailOutlined />, [
     getItem('Users', '1'),
@@ -36,6 +38,7 @@ const items = [
     getItem('Kiosk Up/Down Time', '16'),
   ]),
 ];
+
 const App = () => {
   const [theme, setTheme] = useState('dark');
   const [current, setCurrent] = useState('1');
@@ -70,4 +73,5 @@ const App = () => {
     </>
   );
 };
+
 export default App;
