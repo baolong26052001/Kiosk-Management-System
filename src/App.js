@@ -11,23 +11,26 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem('Navigation One', 'sub1', <MailOutlined />, [
-    getItem('Option 1', '1'),
-    getItem('Option 2', '2'),
-    getItem('Option 3', '3'),
-    getItem('Option 4', '4'),
+  getItem('Admin', 'sub1', <MailOutlined />, [
+    getItem('Users', '1'),
+    getItem('User Group', '2'),
+    getItem('Kiosk Setup', '3'),
+    getItem('Kiosk Hardware', '4'),
+    getItem('Access Rule', '5'),
+    getItem('Station', '6'),
+    getItem('Video Slideshow Setup', '7'),
   ]),
-  getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
-    getItem('Option 5', '5'),
-    getItem('Option 6', '6'),
-    getItem('Option 7', '7'),
-    getItem('Option 8', '8'),
+  getItem('Transaction', 'sub2', <AppstoreOutlined />, [
+    getItem('Account', '8'),
+    getItem('Loan Account', '9'),
+    getItem('Saving Account', '10'),
+    getItem('Statement', '11'),
   ]),
-  getItem('Navigation Three', 'sub4', <SettingOutlined />, [
-    getItem('Option 9', '9'),
-    getItem('Option 10', '10'),
-    getItem('Option 11', '11'),
-    getItem('Option 12', '12'),
+  getItem('Logs', 'sub4', <SettingOutlined />, [
+    getItem('Transaction Logs', '12'),
+    getItem('Activity Logs', '13'),
+    getItem('Notification Logs', '14'),
+    getItem('Audit', '15'),
   ]),
 ];
 const App = () => {
