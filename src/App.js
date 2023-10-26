@@ -56,6 +56,7 @@ const App = () => {
       onClick={onClick}
       style={{
         width: 256,
+        height: 900,
       }}
       defaultOpenKeys={['sub1']}
       selectedKeys={[current]}
