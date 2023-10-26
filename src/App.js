@@ -26,11 +26,14 @@ const items = [
     getItem('Saving Account', '10'),
     getItem('Statement', '11'),
   ]),
-  getItem('Logs', 'sub4', <SettingOutlined />, [
+  getItem('Logs', 'sub3', <SettingOutlined />, [
     getItem('Transaction Logs', '12'),
     getItem('Activity Logs', '13'),
     getItem('Notification Logs', '14'),
     getItem('Audit', '15'),
+  ]),
+  getItem('Report', 'sub4', <SettingOutlined />, [
+    getItem('Kiosk Up/Down Time', '16'),
   ]),
 ];
 const App = () => {
