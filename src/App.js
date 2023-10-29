@@ -40,7 +40,44 @@ const items = [
   ]),
 ];
 
+const data = [
+  {
+    id: 1,
+    name: 'John Doe',
+    age: 30,
+    email: 'john.doe@example.com',
+  },
+  {
+    id: 2,
+    name: 'Jane Smith',
+    age: 25,
+    email: 'jane.smith@example.com',
+  },
+  // Add more data as needed
+];
 
+const columns = [
+  {
+    name: 'ID',
+    selector: 'id',
+    sortable: true,
+  },
+  {
+    name: 'Name',
+    selector: 'name',
+    sortable: true,
+  },
+  {
+    name: 'Age',
+    selector: 'age',
+    sortable: true,
+  },
+  {
+    name: 'Email',
+    selector: 'email',
+    sortable: true,
+  },
+];
 
 const App = () => {
   const [current, setCurrent] = useState('1');
@@ -51,18 +88,29 @@ const App = () => {
   };
 
   return (
-    <Menu
-      theme="dark" 
-      onClick={onClick}
-      style={{
-        width: 256,
-        height: 900,
-      }}
-      defaultOpenKeys={['sub1']}
-      selectedKeys={[current]}
-      mode="inline"
-      items={items}
-    />
+    <div style={{ display: 'flex' }}>
+      <Menu
+        theme="dark"
+        onClick={onClick}
+        style={{
+          width: 256,
+          height: 900,
+        }}
+        defaultOpenKeys={['sub1']}
+        selectedKeys={[current]}
+        mode="inline"
+        items={items}
+      />
+
+      <div style={{ flex: 1, padding: '16px' }}>
+        <DataTable
+          title="User Data"
+          columns={columns}
+          data={data}
+          pagination
+        />
+      </div>
+    </div>
   );
 };
 
