@@ -14,7 +14,7 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
-  getItem('Dashboard', '99'),
+  getItem('Dashboard', '99', <AppstoreOutlined />),
   getItem('Admin', 'sub1', <MailOutlined />, [
     getItem('Users', '1'),
     getItem('User Group', '2'),
