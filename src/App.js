@@ -14,6 +14,7 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
+  getItem('Dashboard', '99'),
   getItem('Admin', 'sub1', <MailOutlined />, [
     getItem('Users', '1'),
     getItem('User Group', '2'),
@@ -50,10 +51,10 @@ const data = [
   {
     id: 2,
     name: 'Jane Smith',
-    age: 25,
+    age: 99,
     email: 'jane.smith@example.com',
   },
-  // Add more data as needed
+  
 ];
 
 const columns = [
@@ -94,7 +95,7 @@ const App = () => {
         onClick={onClick}
         style={{
           width: 256,
-          height: 900,
+          height: 1000,
         }}
         defaultOpenKeys={['sub1']}
         selectedKeys={[current]}
