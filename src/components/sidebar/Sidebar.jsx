@@ -1,6 +1,6 @@
 // import './slidebar.css';
 import React, { useState } from 'react';
-import { AppstoreOutlined, ProfileOutlined, WifiOutlined, CreditCardOutlined, CopyOutlined, BellOutlined, AlignLeftOutlined, UnorderedListOutlined, AccountBookOutlined, MoneyCollectOutlined, FileTextOutlined, LockOutlined, MailOutlined, SettingOutlined, UserOutlined, UsergroupAddOutlined, AppstoreAddOutlined, LaptopOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, HomeOutlined, ProfileOutlined, WifiOutlined, CreditCardOutlined, CopyOutlined, BellOutlined, AlignLeftOutlined, UnorderedListOutlined, AccountBookOutlined, MoneyCollectOutlined, FileTextOutlined, LockOutlined, MailOutlined, SettingOutlined, UserOutlined, UsergroupAddOutlined, AppstoreAddOutlined, LaptopOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import './sidebar.css';
 
@@ -14,6 +14,7 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
+  getItem('Dashboard', '17', <HomeOutlined />),
   getItem('Admin', 'sub1', <SettingOutlined />, [
     getItem('Users', '1', <UserOutlined />),
     getItem('Users Group', '2', <UsergroupAddOutlined />),
@@ -44,7 +45,7 @@ const items = [
 // submenu keys of first level
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub3', 'sub4'];
 const Sidebar = () => {
-  const [openKeys, setOpenKeys] = useState(['sub1']);
+  const [openKeys, setOpenKeys] = useState(['17']);
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
     if (latestOpenKey && rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
@@ -61,8 +62,13 @@ const Sidebar = () => {
       onOpenChange={onOpenChange}
       style={{
         width: 256,
-        height: 900,
+        
+        top: "0px",
+        position: "fixed",
+        height: "100%",
+        overflow: "hidden"
       }}
+      defaultSelectedKeys={['17']}
       items={items}
     />
   );
