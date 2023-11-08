@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-menu-item-selected {
+  background-color: #ff18ec; /* Change the background color for the selected item */
+  color: #fff; /* Change the text color for the selected item */
+}

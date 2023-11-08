@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { Menu, Switch } from 'antd';
 import DataTable from 'react-data-table-component';
+import './App.css';
 
 function getItem(label, key, icon, children, type) {
   return {
