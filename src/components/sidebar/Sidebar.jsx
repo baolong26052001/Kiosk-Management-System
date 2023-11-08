@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
+import './sidebar.css';
+
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -12,27 +14,35 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem('Navigation One', 'sub1', <MailOutlined />, [
-    getItem('Option 1', '1'),
-    getItem('Option 2', '2'),
-    getItem('Option 3', '3'),
-    getItem('Option 4', '4'),
+  getItem('Admin', 'sub1', <MailOutlined />, [
+    getItem('Users', '1'),
+    getItem('Users Group', '2'),
+    getItem('Kiosk Setup', '3'),
+    getItem('Kiosk Hardware', '4'),
+    getItem('Station', '5'),
+    getItem('Video slideshow setup', '6'),
   ]),
-  getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
-    getItem('Option 5', '5'),
-    getItem('Option 6', '6'),
-    getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+  getItem('Transaction', 'sub2', <AppstoreOutlined />, [
+    getItem('Account', '7'),
+    getItem('Loan Transaction', '8'),
+    getItem('Saving Transaction', '9'),
+    getItem('Loan Statement', '10'),
+    getItem('Saving Statement', '11'),
   ]),
-  getItem('Navigation Three', 'sub4', <SettingOutlined />, [
-    getItem('Option 9', '9'),
-    getItem('Option 10', '10'),
-    getItem('Option 11', '11'),
-    getItem('Option 12', '12'),
+  getItem('Logs', 'sub3', <SettingOutlined />, [
+    getItem('Transaction Logs', '12'),
+    getItem('Activity Logs', '13'),
+    getItem('Notification Logs', '14'),
+    getItem('Audit', '15'),
+  ]),
+  getItem('Report', 'sub4', <SettingOutlined />, [
+    getItem('Kiosk Health', '16'),
+    
   ]),
 ];
 
 // submenu keys of first level
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
+const rootSubmenuKeys = ['sub1', 'sub2', 'sub3', 'sub4'];
 const Sidebar = () => {
   const [openKeys, setOpenKeys] = useState(['sub1']);
   const onOpenChange = (keys) => {
@@ -45,11 +55,13 @@ const Sidebar = () => {
   };
   return (
     <Menu
+      theme="dark"
       mode="inline"
       openKeys={openKeys}
       onOpenChange={onOpenChange}
       style={{
         width: 256,
+        height: 900,
       }}
       items={items}
     />

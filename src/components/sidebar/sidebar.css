@@ -1,0 +1,13 @@
+.ant-menu-item-selected {
+    background-color: #685ED5 !important;
+    color: #fff;
+}
+.ant-menu-title-content {
+  font-family: 'DM Sans', sans-serif;
+}
+.ant-menu-dark {
+    background-color: #2F3349;
+}
+:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-dark.ant-menu-inline .ant-menu-sub.ant-menu-inline, :where(.css-dev-only-do-not-override-xu9wm8).ant-menu-dark>.ant-menu.ant-menu-inline .ant-menu-sub.ant-menu-inline {
+    background: #2F3349;
+}
