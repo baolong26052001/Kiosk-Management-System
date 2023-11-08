@@ -1,6 +1,6 @@
 // import './slidebar.css';
 import React, { useState } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, ProfileOutlined, WifiOutlined, CreditCardOutlined, CopyOutlined, BellOutlined, AlignLeftOutlined, UnorderedListOutlined, AccountBookOutlined, MoneyCollectOutlined, FileTextOutlined, LockOutlined, MailOutlined, SettingOutlined, UserOutlined, UsergroupAddOutlined, AppstoreAddOutlined, LaptopOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import './sidebar.css';
 
@@ -14,29 +14,29 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem('Admin', 'sub1', <MailOutlined />, [
-    getItem('Users', '1'),
-    getItem('Users Group', '2'),
-    getItem('Kiosk Setup', '3'),
-    getItem('Kiosk Hardware', '4'),
-    getItem('Station', '5'),
-    getItem('Video slideshow setup', '6'),
+  getItem('Admin', 'sub1', <SettingOutlined />, [
+    getItem('Users', '1', <UserOutlined />),
+    getItem('Users Group', '2', <UsergroupAddOutlined />),
+    getItem('Kiosk Setup', '3', <AppstoreAddOutlined />),
+    getItem('Kiosk Hardware', '4', <AppstoreAddOutlined />),
+    getItem('Station', '5', <LaptopOutlined />),
+    getItem('Video slideshow setup', '6', <MenuUnfoldOutlined />),
   ]),
   getItem('Transaction', 'sub2', <AppstoreOutlined />, [
-    getItem('Account', '7'),
-    getItem('Loan Transaction', '8'),
-    getItem('Saving Transaction', '9'),
-    getItem('Loan Statement', '10'),
-    getItem('Saving Statement', '11'),
+    getItem('Account', '7', <LockOutlined />),
+    getItem('Loan Transaction', '8', <FileTextOutlined />),
+    getItem('Saving Transaction', '9', <MoneyCollectOutlined />),
+    getItem('Loan Statement', '10', <AccountBookOutlined />),
+    getItem('Saving Statement', '11', <AccountBookOutlined />),
   ]),
-  getItem('Logs', 'sub3', <SettingOutlined />, [
-    getItem('Transaction Logs', '12'),
-    getItem('Activity Logs', '13'),
-    getItem('Notification Logs', '14'),
-    getItem('Audit', '15'),
+  getItem('Logs', 'sub3', <ProfileOutlined />, [
+    getItem('Transaction Logs', '12', <UnorderedListOutlined />),
+    getItem('Activity Logs', '13', <CopyOutlined />),
+    getItem('Notification Logs', '14', <BellOutlined />),
+    getItem('Audit', '15', <CreditCardOutlined />),
   ]),
-  getItem('Report', 'sub4', <SettingOutlined />, [
-    getItem('Kiosk Health', '16'),
+  getItem('Report', 'sub4', <FileTextOutlined />, [
+    getItem('Kiosk Health', '16', <WifiOutlined />),
     
   ]),
 ];
