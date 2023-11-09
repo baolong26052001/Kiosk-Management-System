@@ -88,7 +88,19 @@ const Dashboard = () => {
                     <td>24-01-2023</td>
                 </tr>
             </table>
-
+            
+            <div class="pageselect">
+                <p class="rowperpage">Rows per page</p>
+                <select class="listoption">
+                    
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+            
+        
         </div>
 
     </div>
