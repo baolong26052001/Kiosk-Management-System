@@ -129,7 +129,7 @@ const Dashboard = () => {
         
         <div class="bigcard">
             <h3 class="kioskstatus">Kiosk Status</h3>
-            <input onChange={handleSearch} onkeyup="myFunction()" placeholder="  Search..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
+            <input onChange={handleSearch} onkeyup="myFunction()" placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
             
             <input type="button" value="Search" class="button"></input>
 
