@@ -23,7 +23,47 @@ const Dashboard = () => {
             scannerUpdate: '24-01-2023', 
             cashDepositUpdate: '24-01-2023' 
         },
+
+        { 
+            kioskName: 'Kiosk 132', 
+            kioskID: 234, 
+            stationCode: 258, 
+            heartbeatUpdate: '24-01-2023', 
+            cameraUpdate: '24-01-2023', 
+            scannerUpdate: '24-01-2023', 
+            cashDepositUpdate: '24-01-2023' 
+        },
+
+        { 
+            kioskName: 'Kiosk 132', 
+            kioskID: 234, 
+            stationCode: 258, 
+            heartbeatUpdate: '24-01-2023', 
+            cameraUpdate: '24-01-2023', 
+            scannerUpdate: '24-01-2023', 
+            cashDepositUpdate: '24-01-2023' 
+        },
         
+        { 
+            kioskName: 'Kiosk 133', 
+            kioskID: 456, 
+            stationCode: 3213, 
+            heartbeatUpdate: '24-01-2023', 
+            cameraUpdate: '24-01-2023', 
+            scannerUpdate: '24-01-2023', 
+            cashDepositUpdate: '24-01-2023' 
+        },
+
+        { 
+            kioskName: 'Kiosk 133', 
+            kioskID: 456, 
+            stationCode: 3213, 
+            heartbeatUpdate: '24-01-2023', 
+            cameraUpdate: '24-01-2023', 
+            scannerUpdate: '24-01-2023', 
+            cashDepositUpdate: '24-01-2023' 
+        },
+
         { 
             kioskName: 'Kiosk 133', 
             kioskID: 456, 
