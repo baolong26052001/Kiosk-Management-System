@@ -47,8 +47,48 @@ const Dashboard = () => {
         
         <div class="bigcard">
             <h3 class="kioskstatus">Kiosk Status</h3>
-            <input type="text" id="kioskid" name="kioskid" class="searchbar"></input>
+            <input placeholder="  Search..." type="text" id="kioskid" name="kioskid" class="searchbar"></input>
             <input type="button" value="Search" class="button"></input>
+
+            <table>
+                <tr>
+                    <th>Kiosk Name</th>
+                    <th>Kiosk ID</th>
+                    <th>Station Code</th>
+                    <th>Kiosk Heartbeat Last Update</th>
+                    <th>Camera Last Update</th>
+                    <th>Scanner Last Update</th>
+                    <th>Cash Deposit Last Update</th>
+                </tr>
+                <tr>
+                    <td>Kiosk 132</td>
+                    <td>132</td>
+                    <td>258</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                </tr>
+                <tr>
+                    <td>Kiosk 132</td>
+                    <td>132</td>
+                    <td>258</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                </tr>
+                <tr>
+                    <td>Kiosk 132</td>
+                    <td>132</td>
+                    <td>258</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                    <td>24-01-2023</td>
+                </tr>
+            </table>
+
         </div>
 
     </div>
