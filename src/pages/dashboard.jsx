@@ -13,7 +13,7 @@ const Dashboard = () => {
     <div> 
      <p>Admin/Dashboard</p>
      <h1>Dashboard</h1>
-     
+
         <div class="allcard">
             <div class="card1">
                 <div class="container">
@@ -37,6 +37,9 @@ const Dashboard = () => {
             </div>
         </div>
         
+        <div class="bigcard">
+            
+        </div>
 
     </div>
     
