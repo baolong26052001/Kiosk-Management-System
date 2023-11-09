@@ -10,6 +10,8 @@ import './dashboard.css';
 import './searchtable.js';
 
 const Dashboard = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+
     const data = [
 
         { 
@@ -34,6 +36,19 @@ const Dashboard = () => {
 
         
       ];
+      
+      const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+      };
+    
+      const filteredData = data.filter((item) =>
+        Object.values(item).some(
+          (value) =>
+            value &&
+            value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      );
+
   return (
     
     <div> 
@@ -74,7 +89,8 @@ const Dashboard = () => {
         
         <div class="bigcard">
             <h3 class="kioskstatus">Kiosk Status</h3>
-            <input onkeyup="myFunction()" placeholder="  Search..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
+            <input onChange={handleSearch} onkeyup="myFunction()" placeholder="  Search..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
+            
             <input type="button" value="Search" class="button"></input>
 
             <table id="myTable">
@@ -90,7 +106,7 @@ const Dashboard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((item, index) => (
+                    {filteredData.map((item, index) => (
                     <tr key={index}>
                         <td>{item.kioskName}</td>
                         <td>{item.kioskID}</td>
@@ -104,7 +120,7 @@ const Dashboard = () => {
                 </tbody>
             </table>
             
-            <script src="searchtable.js"></script>
+            
 
             <div class="pageselect">
                 <p class="rowperpage">Rows per page</p>
