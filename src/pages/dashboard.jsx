@@ -24,21 +24,21 @@ const Dashboard = () => {
             </div>
             <div class="card2">
                 <div class="container">
-                    <p class="kiosktext">Total kiosk</p>
+                    <p class="kiosktext">Total kiosk online</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
             </div>
             <div class="card3">
                 <div class="container">
-                    <p class="kiosktext">Total kiosk</p>
+                    <p class="kiosktext">Total kiosk offline</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
             </div>
             <div class="card4">
                 <div class="container">
-                    <p class="kiosktext">Total kiosk</p>
+                    <p class="kiosktext">Total transaction</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
