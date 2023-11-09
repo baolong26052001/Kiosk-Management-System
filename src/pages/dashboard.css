@@ -15,6 +15,41 @@ p {
     display:flex;
     height: 40px;
 }
+.iconpaperlow {
+    margin-top: 28px;
+    margin-left: 30px;
+}
+.iconoffline {
+    margin-top: 28px;
+    margin-left: 30px;
+}
+.iconnopaper {
+    margin-top: 25px;
+    margin-left: 30px;
+}
+.nopapertext {
+    margin-left: 3px;
+    margin-top: 23px;
+}
+.paperlowtext {
+    margin-left: 5px;
+    margin-top: 23px;
+}
+.onlinetext {
+    margin-left: 5px;
+    margin-top: 23px;
+}
+.offlinetext {
+    margin-top: 23px;
+    margin-left: 5px;
+}
+.icononline {
+    margin-top: 28px;
+    margin-left: 40px;
+}
+.statusandimage {
+    display: flex;
+}
 .listoption {
     margin-left: 10px;
     margin-top: 20px;

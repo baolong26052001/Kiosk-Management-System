@@ -7,7 +7,7 @@ import Accordion from 'react-bootstrap/Accordion';
 //import Sidebar from '../components/sidebar/Sidebar';
 import { render } from '@testing-library/react';
 import './dashboard.css';
-import './searchtable.js';
+
 
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +16,7 @@ const Dashboard = () => {
 
         { 
             kioskName: 'Kiosk 132', 
-            kioskID: 234, 
+            kioskID: 123, 
             stationCode: 258, 
             heartbeatUpdate: '24-01-2023', 
             cameraUpdate: '24-01-2023', 
@@ -128,7 +128,18 @@ const Dashboard = () => {
         </div>
         
         <div class="bigcard">
-            <h3 class="kioskstatus">Kiosk Status</h3>
+            <div class="statusandimage">
+                <h3 class="kioskstatus">Kiosk Status</h3>
+                <img class="icononline" width="10px" height="10px" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/check-circle-green-512.png"></img>
+                <h5 class="onlinetext">Online</h5>
+                <img class="iconoffline" width="10px" height="10px" src="https://p7.hiclipart.com/preview/41/41/244/error-http-404-icon-red-cross-mark-png-file.jpg"></img>
+                <h5 class="offlinetext">Offline</h5>
+                <img class="iconpaperlow" width="10px" height="10px" src="https://icones.pro/wp-content/uploads/2021/08/icone-x-avec-cercle-bleue.png"></img>
+                <h5 class="paperlowtext">Paper Low</h5>
+                <img class="iconnopaper" width="15px" height="15px" src="https://banner2.cleanpng.com/20180505/brq/kisspng-button-computer-icons-check-mark-5aed5f80ab4419.9020639015255059207015.jpg"></img>
+                <h5 class="nopapertext">No Paper</h5>
+            </div>
+            
             <input onChange={handleSearch} onkeyup="myFunction()" placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
             
             <input type="button" value="Search" class="button"></input>
