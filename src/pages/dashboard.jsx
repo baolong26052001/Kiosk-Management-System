@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { Menu, Switch } from 'antd';
 import DataTable from 'react-data-table-component';
@@ -7,10 +7,37 @@ import Accordion from 'react-bootstrap/Accordion';
 //import Sidebar from '../components/sidebar/Sidebar';
 import { render } from '@testing-library/react';
 import './dashboard.css';
+import './searchtable.js';
 
 const Dashboard = () => {
+    const data = [
+
+        { 
+            kioskName: 'Kiosk 132', 
+            kioskID: 234, 
+            stationCode: 258, 
+            heartbeatUpdate: '24-01-2023', 
+            cameraUpdate: '24-01-2023', 
+            scannerUpdate: '24-01-2023', 
+            cashDepositUpdate: '24-01-2023' 
+        },
+        
+        { 
+            kioskName: 'Kiosk 133', 
+            kioskID: 456, 
+            stationCode: 3213, 
+            heartbeatUpdate: '24-01-2023', 
+            cameraUpdate: '24-01-2023', 
+            scannerUpdate: '24-01-2023', 
+            cashDepositUpdate: '24-01-2023' 
+        },
+
+        
+      ];
   return (
+    
     <div> 
+        
      <p>Admin/Dashboard</p>
      <h1>Dashboard</h1>
 
@@ -47,11 +74,12 @@ const Dashboard = () => {
         
         <div class="bigcard">
             <h3 class="kioskstatus">Kiosk Status</h3>
-            <input placeholder="  Search..." type="text" id="kioskid" name="kioskid" class="searchbar"></input>
+            <input onkeyup="myFunction()" placeholder="  Search..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
             <input type="button" value="Search" class="button"></input>
 
-            <table>
-                <tr>
+            <table id="myTable">
+                <thead>
+                    <tr>
                     <th>Kiosk Name</th>
                     <th>Kiosk ID</th>
                     <th>Station Code</th>
@@ -59,36 +87,25 @@ const Dashboard = () => {
                     <th>Camera Last Update</th>
                     <th>Scanner Last Update</th>
                     <th>Cash Deposit Last Update</th>
-                </tr>
-                <tr>
-                    <td>Kiosk 132</td>
-                    <td>132</td>
-                    <td>258</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                </tr>
-                <tr>
-                    <td>Kiosk 132</td>
-                    <td>132</td>
-                    <td>258</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                </tr>
-                <tr>
-                    <td>Kiosk 132</td>
-                    <td>132</td>
-                    <td>258</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                    <td>24-01-2023</td>
-                </tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item, index) => (
+                    <tr key={index}>
+                        <td>{item.kioskName}</td>
+                        <td>{item.kioskID}</td>
+                        <td>{item.stationCode}</td>
+                        <td>{item.heartbeatUpdate}</td>
+                        <td>{item.cameraUpdate}</td>
+                        <td>{item.scannerUpdate}</td>
+                        <td>{item.cashDepositUpdate}</td>
+                    </tr>
+                    ))}
+                </tbody>
             </table>
             
+            <script src="searchtable.js"></script>
+
             <div class="pageselect">
                 <p class="rowperpage">Rows per page</p>
                 <select class="listoption">
