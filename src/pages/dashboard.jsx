@@ -46,7 +46,9 @@ const Dashboard = () => {
         </div>
         
         <div class="bigcard">
-
+            <h3 class="kioskstatus">Kiosk Status</h3>
+            <input type="text" id="kioskid" name="kioskid" class="searchbar"></input>
+            <input type="button" value="Search" class="button"></input>
         </div>
 
     </div>

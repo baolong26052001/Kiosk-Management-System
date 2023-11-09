@@ -12,6 +12,15 @@ p {
 .container {
     padding: 10px;
 }
+.kioskstatus {
+    margin-left: 10px;
+    color: #2C3775;
+}
+.searchbar {
+    margin-left: 10px;
+    height: 25px;
+    width: 900px;
+}
 .kiosktext {
     margin-left: 0px;
     height: 5px;
@@ -22,6 +31,19 @@ p {
 
 .allcard {
     display: flex;
+}
+.button {
+    background-color: #655BD3; /* Green */
+    border: none;
+    color: white;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }
 .bigcard {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
