@@ -9,6 +9,17 @@ p {
     margin-left: 280px;
     color: #2C3775;
 }
+.container {
+    padding: 10px;
+}
+.kiosktext {
+    margin-left: 0px;
+    height: 5px;
+}
+.numberkiosk {
+    height: 10px;
+}
+
 .allcard {
     display: flex;
 }
