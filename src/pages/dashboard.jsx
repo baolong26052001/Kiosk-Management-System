@@ -104,7 +104,7 @@ const Dashboard = () => {
                     <p class="kiosktext">Last week analytics</p>
                 </div>
                 <div class="container2">
-                    <img class="iconpaperlow" width="50px" height="50px" src={require('../images/totalkiosk.png')}></img>
+                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/totalkiosk.png')}></img>
                 </div>
             </div>
             <div class="card2">
@@ -114,7 +114,7 @@ const Dashboard = () => {
                     <p class="kiosktext">Last week analytics</p>
                 </div>
                 <div class="container2">
-                    <img class="iconpaperlow" width="50px" height="50px" src={require('../images/kioskonline.png')}></img>
+                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/kioskonline.png')}></img>
                 </div>
             </div>
             <div class="card3">
@@ -124,7 +124,7 @@ const Dashboard = () => {
                     <p class="kiosktext">Last week analytics</p>
                 </div>
                 <div class="container2">
-                    <img class="iconpaperlow" width="50px" height="50px" src={require('../images/kioskoffline.png')}></img>
+                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/kioskoffline.png')}></img>
                 </div>
             </div>
             <div class="card4">
@@ -134,7 +134,7 @@ const Dashboard = () => {
                     <p class="kiosktext">Last week analytics</p>
                 </div>
                 <div class="container2">
-                    <img class="iconpaperlow" width="50px" height="50px" src={require('../images/transaction.png')}></img>
+                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/transaction.png')}></img>
                 </div>
             </div>
         </div>
@@ -142,13 +142,13 @@ const Dashboard = () => {
         <div class="bigcard">
             <div class="statusandimage">
                 <h3 class="kioskstatus">Kiosk Status</h3>
-                <img class="icononline" width="10px" height="10px" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/check-circle-green-512.png"></img>
+                <img class="icononline" width="10px" height="10px" src={require('../images/online.png')}></img>
                 <h5 class="onlinetext">Online</h5>
-                <img class="iconoffline" width="10px" height="10px" src="https://p7.hiclipart.com/preview/41/41/244/error-http-404-icon-red-cross-mark-png-file.jpg"></img>
+                <img class="iconoffline" width="10px" height="10px" src={require('../images/offline.png')}></img>
                 <h5 class="offlinetext">Offline</h5>
-                <img class="iconpaperlow" width="10px" height="10px" src="https://icones.pro/wp-content/uploads/2021/08/icone-x-avec-cercle-bleue.png"></img>
+                <img class="iconpaperlow" width="10px" height="10px" src={require('../images/paperlow.png')}></img>
                 <h5 class="paperlowtext">Paper Low</h5>
-                <img class="iconnopaper" width="15px" height="15px" src="https://banner2.cleanpng.com/20180505/brq/kisspng-button-computer-icons-check-mark-5aed5f80ab4419.9020639015255059207015.jpg"></img>
+                <img class="iconnopaper" width="10px" height="10px" src={require('../images/nopaper.png')}></img>
                 <h5 class="nopapertext">No Paper</h5>
             </div>
             

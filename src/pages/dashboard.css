@@ -12,8 +12,12 @@ p {
 .pageselect {
     margin-top: 30px;
     margin-left: 150px;
-    display:flex;
+    display: flex;
     height: 40px;
+}
+.iconinwhitebox {
+    margin-top: 28px;
+    margin-left: 30px;
 }
 .iconpaperlow {
     margin-top: 28px;
@@ -24,7 +28,7 @@ p {
     margin-left: 30px;
 }
 .iconnopaper {
-    margin-top: 25px;
+    margin-top: 28px;
     margin-left: 30px;
 }
 .nopapertext {
