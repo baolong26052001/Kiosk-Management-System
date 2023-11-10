@@ -7,7 +7,7 @@ import Accordion from 'react-bootstrap/Accordion';
 //import Sidebar from '../components/sidebar/Sidebar';
 import { render } from '@testing-library/react';
 import './dashboard.css';
-import '../images/totalkiosk.png';
+
 
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -152,7 +152,7 @@ const Dashboard = () => {
                 <h5 class="nopapertext">No Paper</h5>
             </div>
             
-            <input onChange={handleSearch} onkeyup="myFunction()" placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
+            <input onChange={handleSearch} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
             
             <input type="button" value="Search" class="button"></input>
 

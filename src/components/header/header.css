@@ -1,0 +1,12 @@
+.ant-layout-header {
+    height: 42px;
+}
+.layout {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.textinheader {
+    justify-content: left;
+}
+.textloan {
+    font-family: 'DM Sans', sans-serif;
+}
