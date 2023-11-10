@@ -7,7 +7,7 @@ import Accordion from 'react-bootstrap/Accordion';
 //import Sidebar from '../components/sidebar/Sidebar';
 import { render } from '@testing-library/react';
 import './dashboard.css';
-
+import '../images/totalkiosk.png';
 
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -103,12 +103,18 @@ const Dashboard = () => {
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
+                <div class="container2">
+                    <img class="iconpaperlow" width="50px" height="50px" src={require('../images/totalkiosk.png')}></img>
+                </div>
             </div>
             <div class="card2">
                 <div class="container">
                     <p class="kiosktext">Total kiosk online</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
+                </div>
+                <div class="container2">
+                    <img class="iconpaperlow" width="50px" height="50px" src={require('../images/kioskonline.png')}></img>
                 </div>
             </div>
             <div class="card3">
@@ -117,12 +123,18 @@ const Dashboard = () => {
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
+                <div class="container2">
+                    <img class="iconpaperlow" width="50px" height="50px" src={require('../images/kioskoffline.png')}></img>
+                </div>
             </div>
             <div class="card4">
                 <div class="container">
                     <p class="kiosktext">Total transaction</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
+                </div>
+                <div class="container2">
+                    <img class="iconpaperlow" width="50px" height="50px" src={require('../images/transaction.png')}></img>
                 </div>
             </div>
         </div>
