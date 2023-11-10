@@ -24,8 +24,22 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<EmptyPage />} />
+          <Route path="/usersgroup" element={<EmptyPage />} />
+          <Route path="/kiosksetup" element={<EmptyPage />} />
+          <Route path="/kioskhardware" element={<EmptyPage />} />
+          <Route path="/station" element={<EmptyPage />} />
+          <Route path="/slideshow" element={<EmptyPage />} />
           <Route path="/account" element={<EmptyPage />} />
-          {/* Add other routes for different sidebar items */}
+          <Route path="/loantransaction" element={<EmptyPage />} />
+          <Route path="/savingtransaction" element={<EmptyPage />} />
+          <Route path="/loanstatement" element={<EmptyPage />} />
+          <Route path="/savingstatement" element={<EmptyPage />} />
+          <Route path="/transactionlogs" element={<EmptyPage />} />
+          <Route path="/activitylogs" element={<EmptyPage />} />
+          <Route path="/notificationlogs" element={<EmptyPage />} />
+          <Route path="/audit" element={<EmptyPage />} />
+          <Route path="/kioskhealth" element={<EmptyPage />} />
+          
         </Routes>
       </div>
     </Router>
