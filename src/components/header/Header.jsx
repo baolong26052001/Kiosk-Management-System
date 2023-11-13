@@ -15,19 +15,22 @@ const Headerbar = () => {
           width: '100%',
           position: 'fixed',
           display: 'flex',
-          
           alignItems: 'center',
+          justifyContent: 'space-between',
           background: 'white',
         }}
       >
         <div className="demo-logo">
-            <img src={require(`../../images/logoheader.png`)} />
+            <img className="logo" src={require(`../../images/logoheader.png`)} />
+            <h4 className="textloan">Loan Kiosk Management System</h4>
         </div>
 
         <div className="textinheader">
-            <h4 className="textloan">Loan Kiosk Management System</h4>
+            
         </div>
-    
+        <div className="menu-header">
+
+        
         <Menu
           theme="white"
           mode="horizontal"
@@ -55,6 +58,7 @@ const Headerbar = () => {
             </Menu.Item>
           ))}
         </Menu>
+        </div>
       </Header>
     </Layout>
   );

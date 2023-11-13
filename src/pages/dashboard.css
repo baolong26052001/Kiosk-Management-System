@@ -10,6 +10,9 @@ p {
     margin-left: 280px;
     color: #2C3775;
 }
+.content {
+    margin-top: 30px;
+}
 .bigcard {
     overflow-x: auto;
     white-space: nowrap;
@@ -130,7 +133,7 @@ tr:nth-child(even) {
     border-radius: 10px;
     margin-top: 40px;
     margin-bottom: 30px;
-    z-index: -1;
+    z-index: 0;
 }
 .container2 {
     margin-top: 10px;

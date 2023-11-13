@@ -44,7 +44,7 @@ const Slideshow = () => {
   };
 
   return (
-    <div>
+    <div class="content">
       <h1>Video slideshow setup</h1>
 
       <div class="bigcard">

@@ -93,7 +93,7 @@ const User = () => {
   ];
 
   return (
-    <div>
+    <div class="content">
       <h1>User</h1>
 
       <div class="bigcard">

@@ -91,7 +91,7 @@ const Dashboard = () => {
 
   return (
     
-    <div> 
+    <div class="content"> 
         
      <p>Admin/Dashboard</p>
      <h1>Dashboard</h1>

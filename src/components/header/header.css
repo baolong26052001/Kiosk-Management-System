@@ -3,6 +3,10 @@
 }
 .layout {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+}
+.ant-layout-header{
+    z-index: 1;
 }
 .textinheader {
     justify-content: left;
@@ -11,6 +15,14 @@
     font-family: 'DM Sans', sans-serif;
 }
 .demo-logo {
-    margin-top: 30px;
+    display:flex;
+    margin-top: 0px;
     align-items: center;
 }
+.logo{
+    width:206px;
+    justify-content: space-between;
+}
+/* .css-dev-only-do-not-override-xu9wm8 {
+    
+} */
