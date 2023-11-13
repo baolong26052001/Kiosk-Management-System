@@ -15,4 +15,4 @@ function EmptyPage() {
     );
 }
   
-  export default EmptyPage;
+export default EmptyPage;

@@ -8,10 +8,11 @@ import Sidebar from './components/sidebar/Sidebar';
 import Headerbar from './components/header/Header';
 import Dashboard from './pages/dashboard';
 import EmptyPage from './pages/empty';
+import User from './pages/User';
+import Slideshow from './pages/slideshow';
 import { render } from '@testing-library/react';
 //import { Outlet, Link, Route } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 
 const App = () => {
   return (
@@ -23,12 +24,12 @@ const App = () => {
         <Sidebar />
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/users" element={<EmptyPage />} />
+          <Route path="/users" element={<User />} />
           <Route path="/usersgroup" element={<EmptyPage />} />
           <Route path="/kiosksetup" element={<EmptyPage />} />
           <Route path="/kioskhardware" element={<EmptyPage />} />
           <Route path="/station" element={<EmptyPage />} />
-          <Route path="/slideshow" element={<EmptyPage />} />
+          <Route path="/slideshow" element={<Slideshow />} />
           <Route path="/account" element={<EmptyPage />} />
           <Route path="/loantransaction" element={<EmptyPage />} />
           <Route path="/savingtransaction" element={<EmptyPage />} />
@@ -47,4 +48,5 @@ const App = () => {
     </div>
   )
 }
+
 export default App;

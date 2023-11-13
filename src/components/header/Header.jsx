@@ -12,15 +12,20 @@ const Headerbar = () => {
     <Layout className="layout">
       <Header
         style={{
+          width: '100%',
+          position: 'fixed',
           display: 'flex',
-          justifyContent: 'space-between',
+          
           alignItems: 'center',
           background: 'white',
         }}
       >
-        <div className="demo-logo"></div>
+        <div className="demo-logo">
+            <img src={require(`../../images/logoheader.png`)} />
+        </div>
+
         <div className="textinheader">
-          <h4 className="textloan">Loan Kiosk Management System</h4>
+            <h4 className="textloan">Loan Kiosk Management System</h4>
         </div>
     
         <Menu

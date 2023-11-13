@@ -21,7 +21,7 @@ const Dashboard = () => {
             heartbeatUpdate: '24-01-2023', 
             cameraUpdate: '24-01-2023', 
             scannerUpdate: '24-01-2023', 
-            cashDepositUpdate: '24-01-2023' 
+            cashDepositUpdate: '24-01-2023'
         },
 
         { 
@@ -139,68 +139,75 @@ const Dashboard = () => {
             </div>
         </div>
         
-        <div class="bigcard">
-            <div class="statusandimage">
-                <h3 class="kioskstatus">Kiosk Status</h3>
-                <img class="icononline" width="10px" height="10px" src={require('../images/online.png')}></img>
-                <h5 class="onlinetext">Online</h5>
-                <img class="iconoffline" width="10px" height="10px" src={require('../images/offline.png')}></img>
-                <h5 class="offlinetext">Offline</h5>
-                <img class="iconpaperlow" width="10px" height="10px" src={require('../images/paperlow.png')}></img>
-                <h5 class="paperlowtext">Paper Low</h5>
-                <img class="iconnopaper" width="10px" height="10px" src={require('../images/nopaper.png')}></img>
-                <h5 class="nopapertext">No Paper</h5>
-            </div>
-            
-            <input onChange={handleSearch} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
-            
-            <input type="button" value="Search" class="button"></input>
-
-            <table id="myTable">
-                <thead>
-                    <tr>
-                    <th>Kiosk Name</th>
-                    <th>Kiosk ID</th>
-                    <th>Station Code</th>
-                    <th>Kiosk Heartbeat Last Update</th>
-                    <th>Camera Last Update</th>
-                    <th>Scanner Last Update</th>
-                    <th>Cash Deposit Last Update</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredData.map((item, index) => (
-                    <tr key={index}>
-                        <td>{item.kioskName}</td>
-                        <td>{item.kioskID}</td>
-                        <td>{item.stationCode}</td>
-                        <td>{item.heartbeatUpdate}</td>
-                        <td>{item.cameraUpdate}</td>
-                        <td>{item.scannerUpdate}</td>
-                        <td>{item.cashDepositUpdate}</td>
-                    </tr>
-                    ))}
-                </tbody>
-            </table>
-            
-            
-
-            <div class="pageselect">
-                <p class="rowperpage">Rows per page</p>
-                <select class="listoption">
-                    
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>
-            </div>
-            
         
-        </div>
+            <div class="bigcard">
+                <div class="statusandimage">
+                    <h3 class="kioskstatus">Kiosk Status</h3>
+                    <img class="icononline" width="10px" height="10px" src={require('../images/online.png')}></img>
+                    <h5 class="onlinetext">Online</h5>
+                    <img class="iconoffline" width="10px" height="10px" src={require('../images/offline.png')}></img>
+                    <h5 class="offlinetext">Offline</h5>
+                    <img class="iconpaperlow" width="10px" height="10px" src={require('../images/paperlow.png')}></img>
+                    <h5 class="paperlowtext">Paper Low</h5>
+                    <img class="iconnopaper" width="10px" height="10px" src={require('../images/nopaper.png')}></img>
+                    <h5 class="nopapertext">No Paper</h5>
+                </div>
+                
+                <input onChange={handleSearch} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
+                
+                <input type="button" value="Search" class="button button-search"></input>
 
+                <div class="scroll-container">
+
+                
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                        <th>Kiosk Name</th>
+                        <th>Kiosk ID</th>
+                        <th>Station Code</th>
+                        <th>Kiosk Heartbeat Last Update</th>
+                        <th>Camera Last Update</th>
+                        <th>Scanner Last Update</th>
+                        <th>Cash Deposit Last Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {filteredData.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.kioskName}</td>
+                            <td>{item.kioskID}</td>
+                            <td>{item.stationCode}</td>
+                            <td>{item.heartbeatUpdate}</td>
+                            <td>{item.cameraUpdate}</td>
+                            <td>{item.scannerUpdate}</td>
+                            <td>{item.cashDepositUpdate}</td>
+                        </tr>
+                        ))}
+                    </tbody>
+                </table>
+                
+                </div>
+                
+
+                <div class="pageselect">
+                    <p class="rowperpage">Rows per page</p>
+                    <select class="listoption">
+                        
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+                
+            
+            </div>
+
+        
     </div>
     
   )
 }
+
 export default Dashboard;
