@@ -140,7 +140,7 @@ const Dashboard = () => {
         </div>
         
         
-            <div class="bigcard">
+            <div class="bigcarddashboard">
                 <div class="statusandimage">
                     <h3 class="kioskstatus">Kiosk Status</h3>
                     <img class="icononline" width="10px" height="10px" src={require('../images/online.png')}></img>
