@@ -32,9 +32,9 @@ p {
     overflow-x: auto;
     width: 100%;
 }
-.pageselect {
+.pageselectdashboard {
     margin-top: 30px;
-    margin-left: 150px;
+    justify-content: center;
     display: flex;
     height: 40px;
 }
@@ -78,15 +78,16 @@ p {
     display: flex;
     
 }
-.listoption {
+.listoptiondash {
     margin-left: 10px;
     margin-top: 20px;
 }
 .container {
     padding: 10px;
 }
-.rowperpage {
+.rowperpagedash {
     color:black;
+    margin-left: 0px !important;
 }
 .kioskstatus {
     margin-left: 10px;

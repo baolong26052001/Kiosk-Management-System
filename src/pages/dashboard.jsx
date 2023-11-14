@@ -193,9 +193,9 @@ const Dashboard = () => {
                 </div>
                 
 
-                <div class="pageselect">
-                    <p class="rowperpage">Rows per page</p>
-                    <select class="listoption">
+                <div class="pageselectdashboard">
+                    <p class="rowperpagedash">Rows per page</p>
+                    <select class="listoptiondash">
                         
                         <option value="10">10</option>
                         <option value="20">20</option>
