@@ -11,6 +11,19 @@ import './dashboard.css';
 
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [selectedRows, setSelectedRows] = useState([]);
+
+    const handleCheckboxChange = (event, item) => {
+        if (event.target.checked) {
+          // Add the selected item to the list
+          setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item]);
+        } else {
+          // Remove the selected item from the list
+          setSelectedRows((prevSelectedRows) =>
+            prevSelectedRows.filter((selectedItem) => selectedItem !== item)
+          );
+        }
+    };
 
     const data = [
 
@@ -166,6 +179,7 @@ const Dashboard = () => {
                 <table id="myTable">
                     <thead>
                         <tr>
+                        <th></th>
                         <th>Kiosk Name</th>
                         <th>Kiosk ID</th>
                         <th>Station Code</th>
@@ -178,6 +192,13 @@ const Dashboard = () => {
                     <tbody>
                         {filteredData.map((item, index) => (
                         <tr key={index}>
+                            <td>
+                                <input
+                                type="checkbox"
+                                onChange={(event) => handleCheckboxChange(event, item)}
+                                
+                                />
+                            </td>
                             <td>{item.kioskName}</td>
                             <td>{item.kioskID}</td>
                             <td>{item.stationCode}</td>
