@@ -17,6 +17,7 @@ p {
 .bigcard {
     overflow-x: auto;
     white-space: nowrap;
+    width: 100% !important;
 }
 .scroll-container {
     overflow-x: auto;

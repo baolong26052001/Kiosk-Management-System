@@ -15,7 +15,7 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem('Admin', '99'),
+  getItem('ADMIN', '99'),
   getItem('Dashboard', '17', <HomeOutlined />),
   getItem('Admin', 'sub1', <SettingOutlined />, [
     getItem('Users', '1', <UserOutlined />),
