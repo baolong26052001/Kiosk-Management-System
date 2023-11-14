@@ -98,42 +98,42 @@ const Dashboard = () => {
 
         <div class="allcard">
             <div class="card1">
-                <div class="container">
+                <div class="area">
                     <p class="kiosktext">Total kiosk</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
-                <div class="container2">
+                <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/totalkiosk.png')}></img>
                 </div>
             </div>
             <div class="card2">
-                <div class="container">
+                <div class="area">
                     <p class="kiosktext">Total kiosk online</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
-                <div class="container2">
+                <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/kioskonline.png')}></img>
                 </div>
             </div>
             <div class="card3">
-                <div class="container">
+                <div class="area">
                     <p class="kiosktext">Total kiosk offline</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
-                <div class="container2">
+                <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/kioskoffline.png')}></img>
                 </div>
             </div>
             <div class="card4">
-                <div class="container">
+                <div class="area">
                     <p class="kiosktext">Total transaction</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
                     <p class="kiosktext">Last week analytics</p>
                 </div>
-                <div class="container2">
+                <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/transaction.png')}></img>
                 </div>
             </div>

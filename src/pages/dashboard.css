@@ -82,7 +82,7 @@ p {
     margin-left: 10px;
     margin-top: 20px;
 }
-.container {
+.area {
     padding: 10px;
 }
 .rowperpagedash {
@@ -149,7 +149,7 @@ tr:nth-child(even) {
 }
 
 
-.container2 {
+.area2 {
     margin-top: 10px;
     margin-right: 4px;
 }
@@ -198,6 +198,6 @@ tr:nth-child(even) {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.container {
+.area {
     padding: 2px 16px;
 }
