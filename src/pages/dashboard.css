@@ -92,10 +92,19 @@ p {
     margin-left: 10px;
     color: #2C3775;
 }
+.searchdiv {
+    width: 100%;
+    display:flex;
+}
 .searchbar {
     margin-left: 10px;
     height: 25px;
-    width: 70%;
+    width: 100%;
+    position: relative;
+}
+.button-search {
+    position:relative;
+    
 }
 .kiosktext {
     margin-left: 0px;
@@ -137,6 +146,7 @@ tr:nth-child(even) {
     font-size: 16px;
     cursor: pointer;
 }
+
 
 .container2 {
     margin-top: 10px;

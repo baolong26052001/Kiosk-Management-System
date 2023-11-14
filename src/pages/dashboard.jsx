@@ -153,10 +153,13 @@ const Dashboard = () => {
                     <h5 class="nopapertext">No Paper</h5>
                 </div>
                 
+                <div class="searchdiv">
+
+                
                 <input onChange={handleSearch} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
                 
                 <input type="button" value="Search" class="button button-search"></input>
-
+                </div>
                 <div class="tablediv">
 
                 
