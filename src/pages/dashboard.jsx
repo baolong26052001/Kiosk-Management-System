@@ -157,7 +157,7 @@ const Dashboard = () => {
                 
                 <input type="button" value="Search" class="button button-search"></input>
 
-                <div class="scroll-container">
+                <div class="tablediv">
 
                 
                 <table id="myTable">

@@ -19,7 +19,7 @@ p {
     white-space: nowrap;
     width: 100% !important;
 }
-.scroll-container {
+.tablediv {
     overflow-x: auto;
     width: 77%;
 }
