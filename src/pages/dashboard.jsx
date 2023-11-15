@@ -12,23 +12,35 @@ import './dashboard.css';
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedRows, setSelectedRows] = useState([]);
+    const [selectAllChecked, setSelectAllChecked] = useState(false);
 
     const handleCheckboxChange = (event, item) => {
-        if (event.target.checked) {
-          // Add the selected item to the list
-          setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item]);
+        const { checked } = event.target;
+    
+        if (event.target.name === 'selectAll') {
+          // Handle "Select All" checkbox
+          setSelectAllChecked(checked);
+          setSelectedRows(checked ? data : []);
         } else {
-          // Remove the selected item from the list
-          setSelectedRows((prevSelectedRows) =>
-            prevSelectedRows.filter((selectedItem) => selectedItem !== item)
-          );
+          // Handle individual checkboxes
+          if (checked) {
+            // Add the selected item to the list
+            setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item.kioskID]);
+          } else {
+            // Remove the selected item from the list
+            setSelectedRows((prevSelectedRows) =>
+              prevSelectedRows.filter(
+                (selectedItem) => selectedItem !== item.kioskID
+              )
+            );
+          }
         }
     };
 
     const data = [
 
         { 
-            kioskName: 'Kiosk 132', 
+            kioskName: 'Kiosk 123', 
             kioskID: 123, 
             stationCode: 258, 
             heartbeatUpdate: '24-01-2023', 
@@ -38,8 +50,8 @@ const Dashboard = () => {
         },
 
         { 
-            kioskName: 'Kiosk 132', 
-            kioskID: 234, 
+            kioskName: 'Kiosk 124', 
+            kioskID: 124, 
             stationCode: 258, 
             heartbeatUpdate: '24-01-2023', 
             cameraUpdate: '24-01-2023', 
@@ -48,8 +60,8 @@ const Dashboard = () => {
         },
 
         { 
-            kioskName: 'Kiosk 132', 
-            kioskID: 234, 
+            kioskName: 'Kiosk 125', 
+            kioskID: 125, 
             stationCode: 258, 
             heartbeatUpdate: '24-01-2023', 
             cameraUpdate: '24-01-2023', 
@@ -58,8 +70,8 @@ const Dashboard = () => {
         },
         
         { 
-            kioskName: 'Kiosk 133', 
-            kioskID: 456, 
+            kioskName: 'Kiosk 126', 
+            kioskID: 126, 
             stationCode: 3213, 
             heartbeatUpdate: '24-01-2023', 
             cameraUpdate: '24-01-2023', 
@@ -68,8 +80,8 @@ const Dashboard = () => {
         },
 
         { 
-            kioskName: 'Kiosk 133', 
-            kioskID: 456, 
+            kioskName: 'Kiosk 127', 
+            kioskID: 127, 
             stationCode: 3213, 
             heartbeatUpdate: '24-01-2023', 
             cameraUpdate: '24-01-2023', 
@@ -78,8 +90,8 @@ const Dashboard = () => {
         },
 
         { 
-            kioskName: 'Kiosk 133', 
-            kioskID: 456, 
+            kioskName: 'Kiosk 128', 
+            kioskID: 128, 
             stationCode: 3213, 
             heartbeatUpdate: '24-01-2023', 
             cameraUpdate: '24-01-2023', 
@@ -179,7 +191,14 @@ const Dashboard = () => {
                 <table id="myTable">
                     <thead>
                         <tr>
-                        <th></th>
+                        <th>
+                            <input
+                            type="checkbox"
+                            name="selectAll"
+                            checked={selectAllChecked}
+                            onChange={(event) => handleCheckboxChange(event, null)}
+                            />
+                        </th>
                         <th>Kiosk Name</th>
                         <th>Kiosk ID</th>
                         <th>Station Code</th>
@@ -195,8 +214,8 @@ const Dashboard = () => {
                             <td>
                                 <input
                                 type="checkbox"
+                                checked={selectAllChecked || selectedRows.includes(item.kioskID)}
                                 onChange={(event) => handleCheckboxChange(event, item)}
-                                
                                 />
                             </td>
                             <td>{item.kioskName}</td>
