@@ -131,7 +131,11 @@ p {
 }
 .kiosktext {
     margin-left: 0px;
+    margin-bottom: 0px;
     height: 5px;
+}
+.last-week-analytic {
+    
 }
 .numberkiosk {
     height: 10px;
@@ -227,4 +231,12 @@ tr:nth-child(even) {
 
 .area {
     padding: 2px 16px;
+}
+.number-in-card {
+    padding: 0px !important;
+    display: flex;
+}
+.percentage {
+    margin-left: 30px !important;
+    margin-top: 25px !important;
 }
