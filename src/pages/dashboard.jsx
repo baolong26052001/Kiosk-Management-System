@@ -144,7 +144,7 @@ const Dashboard = () => {
     
     <div class="content"> 
         
-     <p>Admin/Dashboard</p>
+     <p class="admindashboard">Admin/Dashboard</p>
      <h1>Dashboard</h1>
 
         <div class="allcard">

@@ -21,13 +21,14 @@ p {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     background-color: white;
-    height: 600px;
+    height: auto;
     border-radius: 10px;
     margin-top: 40px;
     margin-bottom: 30px;
     margin-right: 20px;
     z-index: 0;
     margin-left: 280px;
+    padding-bottom: 20px;
 }
 .tablediv {
     overflow-x: auto;
@@ -137,7 +138,7 @@ table {
   
 td, th {
     border: 1px solid #dddddd;
-    text-align: left !important;
+    text-align: center !important;
     padding: 8px;
 }
   
