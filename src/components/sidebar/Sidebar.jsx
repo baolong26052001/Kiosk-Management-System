@@ -10,7 +10,7 @@ function getItem(label, key, icon, children, type) {
     key,
     icon,
     children,
-    label,
+    label: type === 'group' ? <strong className="admin-text">{label}</strong> : label,
     type,
   };
 }

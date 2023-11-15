@@ -147,6 +147,11 @@ td, th {
     text-align: center !important;
     padding: 8px;
 }
+
+tbody {
+    color: #2B3674;
+    font-weight: bold;
+}
   
 tr:nth-child(even) {
     background-color: #dddddd;

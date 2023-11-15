@@ -219,14 +219,7 @@ const Dashboard = () => {
                 <table id="myTable">
                     <thead>
                         <tr>
-                        <th>
-                            <input
-                            type="checkbox"
-                            name="selectAll"
-                            checked={selectAllChecked}
-                            onChange={(event) => handleCheckboxChange(event, null)}
-                            />
-                        </th>
+                        
                         <th onClick={() => handleSort('kioskName')}>Kiosk Name</th>
                         <th onClick={() => handleSort('kioskID')}>Kiosk ID</th>
                         <th onClick={() => handleSort('stationCode')}>Station Code</th>
@@ -239,13 +232,7 @@ const Dashboard = () => {
                     <tbody>
                         {filteredData.map((item, index) => (
                         <tr key={index}>
-                            <td>
-                                <input
-                                type="checkbox"
-                                checked={selectAllChecked || selectedRows.includes(item.kioskID)}
-                                onChange={(event) => handleCheckboxChange(event, item)}
-                                />
-                            </td>
+                            
                             <td>{item.kioskName}</td>
                             <td>{item.kioskID}</td>
                             <td>{item.stationCode}</td>

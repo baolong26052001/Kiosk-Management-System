@@ -37,3 +37,7 @@
     /* No hover effect */
     cursor: default; /* Sets default cursor */
 }
+.admin-text {
+    font-size: 20px;
+    margin-left: 20px;
+}
