@@ -143,10 +143,11 @@ const Dashboard = () => {
   return (
     
     <div class="content"> 
-        
-     <p class="admindashboard">Admin/Dashboard</p>
-     <h1>Dashboard</h1>
 
+        <div class="admin-dashboard-text-div"> 
+            <p>Admin/Dashboard</p>
+            <h1 class="h1-dashboard">Dashboard</h1>
+        </div>
         <div class="allcard">
             <div class="card1">
                 <div class="area">
