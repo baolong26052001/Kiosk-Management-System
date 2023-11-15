@@ -12,7 +12,6 @@ function getItem(label, key, icon, children, type) {
     children,
     label,
     type,
-    
   };
 }
 const items = [

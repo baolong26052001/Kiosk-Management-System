@@ -186,7 +186,7 @@ const Dashboard = () => {
                     
                     <input type="button" value="Search" class="button button-search"></input>
                 </div>
-                
+
                 <div class="tablediv">
 
                 
@@ -223,10 +223,22 @@ const Dashboard = () => {
                             <td>{item.kioskName}</td>
                             <td>{item.kioskID}</td>
                             <td>{item.stationCode}</td>
-                            <td>{item.heartbeatUpdate}</td>
-                            <td>{item.cameraUpdate}</td>
-                            <td>{item.scannerUpdate}</td>
-                            <td>{item.cashDepositUpdate}</td>
+                            <td>
+                                <img class="icononlinetable" width="10px" height="10px" src={require('../images/online.png')}></img>
+                                {item.heartbeatUpdate}
+                            </td>
+                            <td>
+                                <img class="icononlinetable" width="10px" height="10px" src={require('../images/online.png')}></img>
+                                {item.cameraUpdate}
+                            </td>
+                            <td>
+                                <img class="icononlinetable" width="10px" height="10px" src={require('../images/online.png')}></img>
+                                {item.scannerUpdate}
+                            </td>
+                            <td>
+                                <img class="icononlinetable" width="10px" height="10px" src={require('../images/online.png')}></img>
+                                {item.cashDepositUpdate}
+                            </td>
                         </tr>
                         ))}
                     </tbody>
