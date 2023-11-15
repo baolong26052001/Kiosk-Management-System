@@ -16,6 +16,9 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
   getItem('ADMIN', 'g1', null, [], 'group'),
+  {
+    type: 'divider',
+  },
   getItem('Dashboard', '17', <HomeOutlined />),
   getItem('Admin', 'sub1', <SettingOutlined />, [
     getItem('Users', '1', <UserOutlined />),

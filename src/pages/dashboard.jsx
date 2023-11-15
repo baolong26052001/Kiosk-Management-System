@@ -106,12 +106,37 @@ const Dashboard = () => {
       const handleSearch = (event) => {
         setSearchTerm(event.target.value);
       };
+      
+      const handleSort = (key) => {
+        let direction = 'ascending';
+        if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
+          direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+      };
     
-      const filteredData = data.filter((item) =>
-        Object.values(item).some(
-          (value) =>
-            value &&
-            value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+      const sortData = (data) => {
+        if (sortConfig.key) {
+          const sortedData = [...data];
+          sortedData.sort((a, b) => {
+            const keyA = a[sortConfig.key];
+            const keyB = b[sortConfig.key];
+            if (keyA < keyB) return sortConfig.direction === 'ascending' ? -1 : 1;
+            if (keyA > keyB) return sortConfig.direction === 'ascending' ? 1 : -1;
+            return 0;
+          });
+          return sortedData;
+        }
+        return data;
+      };
+
+      const filteredData = sortData(
+        data.filter((item) =>
+          Object.values(item).some(
+            (value) =>
+              value &&
+              value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+          )
         )
       );
 
@@ -201,13 +226,13 @@ const Dashboard = () => {
                             onChange={(event) => handleCheckboxChange(event, null)}
                             />
                         </th>
-                        <th>Kiosk Name</th>
-                        <th>Kiosk ID</th>
-                        <th>Station Code</th>
-                        <th>Kiosk Heartbeat Last Update</th>
-                        <th>Camera Last Update</th>
-                        <th>Scanner Last Update</th>
-                        <th>Cash Deposit Last Update</th>
+                        <th onClick={() => handleSort('kioskName')}>Kiosk Name</th>
+                        <th onClick={() => handleSort('kioskID')}>Kiosk ID</th>
+                        <th onClick={() => handleSort('stationCode')}>Station Code</th>
+                        <th onClick={() => handleSort('heartbeatUpdate')}>Kiosk Heartbeat Last Update</th>
+                        <th onClick={() => handleSort('cameraUpdate')}>Camera Last Update</th>
+                        <th onClick={() => handleSort('scannerUpdate')}>Scanner Last Update</th>
+                        <th onClick={() => handleSort('cashDepositUpdate')}>Cash Deposit Last Update</th>
                         </tr>
                     </thead>
                     <tbody>
