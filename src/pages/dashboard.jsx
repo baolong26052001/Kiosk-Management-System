@@ -13,6 +13,7 @@ const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedRows, setSelectedRows] = useState([]);
     const [selectAllChecked, setSelectAllChecked] = useState(false);
+    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
 
     const handleCheckboxChange = (event, item) => {
         const { checked } = event.target;
@@ -126,7 +127,7 @@ const Dashboard = () => {
                 <div class="area">
                     <p class="kiosktext">Total kiosk</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
-                    <p class="kiosktext">Last week analytics</p>
+                    <p class="kiosktext">Last week analytic</p>
                 </div>
                 <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/totalkiosk.png')}></img>
@@ -136,7 +137,7 @@ const Dashboard = () => {
                 <div class="area">
                     <p class="kiosktext">Total kiosk online</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
-                    <p class="kiosktext">Last week analytics</p>
+                    <p class="kiosktext">Last week analytic</p>
                 </div>
                 <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/kioskonline.png')}></img>
@@ -146,7 +147,7 @@ const Dashboard = () => {
                 <div class="area">
                     <p class="kiosktext">Total kiosk offline</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
-                    <p class="kiosktext">Last week analytics</p>
+                    <p class="kiosktext">Last week analytic</p>
                 </div>
                 <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/kioskoffline.png')}></img>
@@ -156,7 +157,7 @@ const Dashboard = () => {
                 <div class="area">
                     <p class="kiosktext">Total transaction</p>
                     <h2 class="kiosktext numberkiosk">100</h2>
-                    <p class="kiosktext">Last week analytics</p>
+                    <p class="kiosktext">Last week analytic</p>
                 </div>
                 <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/transaction.png')}></img>
@@ -181,10 +182,11 @@ const Dashboard = () => {
                 <div class="searchdiv">
 
                 
-                <input onChange={handleSearch} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
-                
-                <input type="button" value="Search" class="button button-search"></input>
+                    <input onChange={handleSearch} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
+                    
+                    <input type="button" value="Search" class="button button-search"></input>
                 </div>
+                
                 <div class="tablediv">
 
                 
