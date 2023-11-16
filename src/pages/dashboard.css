@@ -238,5 +238,12 @@ tr:nth-child(even) {
 }
 .percentage {
     margin-left: 30px !important;
-    margin-top: 25px !important;
+    padding-top: 0px !important;
+    margin-bottom: -10px !important;
+    margin-top: 25px;
+}
+.last-week-div {
+    margin-bottom: 0px !important;
+    padding-bottom: 10px !important;
+    height: 20px !important;
 }

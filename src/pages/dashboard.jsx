@@ -196,7 +196,10 @@ const Dashboard = () => {
                         <h2 class="kiosktext numberkiosk">100</h2>
                         <p class="percentage">(+10%)</p>
                     </div>
-                    <p class="kiosktext last-week-analytic">Last week analytic</p>
+                    <div class="last-week-div">
+                        <p class="kiosktext last-week-analytic">Last week analytic</p>
+                    </div>
+                    
                 </div>
                 <div class="area2">
                     <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/transaction.png')}></img>
