@@ -14,6 +14,12 @@ const Dashboard = () => {
     const [selectAllChecked, setSelectAllChecked] = useState(false);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
 
+    const [searchTermButton, setSearchTermButton] = useState('');
+
+    const handleSearchButton = () => {
+        setSearchTerm(searchTermButton);
+    };
+
     const renderSortIcon = (columnKey) => {
         if (sortConfig && sortConfig.key === columnKey) {
           return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;
@@ -231,9 +237,9 @@ const Dashboard = () => {
                 <div class="searchdiv">
 
                 
-                    <input onChange={handleSearch} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
+                    <input onChange={(event) => setSearchTermButton(event.target.value)} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
                     
-                    <input type="button" value="Search" class="button button-search"></input>
+                    <input onClick={handleSearchButton} type="button" value="Search" class="button button-search"></input>
                 </div>
 
                 <div class="tablediv">
