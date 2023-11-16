@@ -9,11 +9,20 @@ import { render } from '@testing-library/react';
 import './dashboard.css';
 
 
+
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedRows, setSelectedRows] = useState([]);
     const [selectAllChecked, setSelectAllChecked] = useState(false);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
+
+    const renderSortIcon = (columnKey) => {
+        if (sortConfig && sortConfig.key === columnKey) {
+          return sortConfig.direction === 'ascending' ? <span>&#9650;</span> : <span>&#9660;</span>;
+        }
+        return null;
+    };
+      
 
     const handleCheckboxChange = (event, item) => {
         const { checked } = event.target;
@@ -236,13 +245,13 @@ const Dashboard = () => {
                     <thead>
                         <tr>
                         
-                        <th onClick={() => handleSort('kioskName')}>Kiosk Name</th>
-                        <th onClick={() => handleSort('kioskID')}>Kiosk ID</th>
-                        <th onClick={() => handleSort('stationCode')}>Station Code</th>
-                        <th onClick={() => handleSort('heartbeatUpdate')}>Kiosk Heartbeat Last Update</th>
-                        <th onClick={() => handleSort('cameraUpdate')}>Camera Last Update</th>
-                        <th onClick={() => handleSort('scannerUpdate')}>Scanner Last Update</th>
-                        <th onClick={() => handleSort('cashDepositUpdate')}>Cash Deposit Last Update</th>
+                        <th onClick={() => handleSort('kioskName')}>Kiosk Name {renderSortIcon('kioskName')}</th>
+                        <th onClick={() => handleSort('kioskID')}>Kiosk ID {renderSortIcon('kioskID')}</th>
+                        <th onClick={() => handleSort('stationCode')}>Station Code {renderSortIcon('stationCode')}</th>
+                        <th onClick={() => handleSort('heartbeatUpdate')}>Kiosk Heartbeat Last Update {renderSortIcon('heartbeatUpdate')}</th>
+                        <th onClick={() => handleSort('cameraUpdate')}>Camera Last Update {renderSortIcon('cameraUpdate')}</th>
+                        <th onClick={() => handleSort('scannerUpdate')}>Scanner Last Update {renderSortIcon('scannerUpdate')}</th>
+                        <th onClick={() => handleSort('cashDepositUpdate')}>Cash Deposit Last Update {renderSortIcon('cashDepositUpdate')}</th>
                         </tr>
                     </thead>
                     <tbody>
