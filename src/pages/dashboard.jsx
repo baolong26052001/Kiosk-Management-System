@@ -8,8 +8,6 @@ import Accordion from 'react-bootstrap/Accordion';
 import { render } from '@testing-library/react';
 import './dashboard.css';
 
-
-
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedRows, setSelectedRows] = useState([]);
@@ -18,9 +16,9 @@ const Dashboard = () => {
 
     const renderSortIcon = (columnKey) => {
         if (sortConfig && sortConfig.key === columnKey) {
-          return sortConfig.direction === 'ascending' ? <span>&#9660;</span> : <span>&#9650;</span>;
+          return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;
         }
-        return sortConfig.direction === 'ascending' ? <span>&#9660;</span> : <span>&#9650;</span>;;
+        return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;;
     };
       
 

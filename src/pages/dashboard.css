@@ -250,3 +250,6 @@ tr:nth-child(even) {
     padding-bottom: 10px !important;
     height: 20px !important;
 }
+.arrow {
+    font-size: 10px;
+}
