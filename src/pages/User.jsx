@@ -197,6 +197,8 @@ const User = () => {
                             onChange={(event) => handleCheckboxChange(event, null)}
                             />
                         </th>
+                        <th></th>
+                        <th></th>
                         <th onClick={() => handleSort('userID')}>User ID {renderSortIcon('userID')}</th>
                         <th onClick={() => handleSort('userName')}>User Name {renderSortIcon('userName')}</th>
                         <th onClick={() => handleSort('email')}>Email {renderSortIcon('email')}</th>
@@ -215,6 +217,12 @@ const User = () => {
                                 checked={selectAllChecked || selectedRows.includes(item.userID)}
                                 onChange={(event) => handleCheckboxChange(event, item)}
                                 />
+                            </td>
+                            <td>
+                            <button class="view-button">View</button>
+                            </td>
+                            <td>
+                            <button class="edit-button">Edit</button>
                             </td>
                             <td>{item.userID}</td>
                             <td>{item.userName}</td>
