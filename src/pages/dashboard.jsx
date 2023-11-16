@@ -18,9 +18,9 @@ const Dashboard = () => {
 
     const renderSortIcon = (columnKey) => {
         if (sortConfig && sortConfig.key === columnKey) {
-          return sortConfig.direction === 'ascending' ? <span>&#9650;</span> : <span>&#9660;</span>;
+          return sortConfig.direction === 'ascending' ? <span>&#9660;</span> : <span>&#9650;</span>;
         }
-        return null;
+        return sortConfig.direction === 'ascending' ? <span>&#9660;</span> : <span>&#9650;</span>;;
     };
       
 
