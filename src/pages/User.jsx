@@ -131,7 +131,7 @@ const User = () => {
         if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
           direction = 'descending';
         }
-        setSortConfig({ key, direction });
+        setSortConfig({key, direction});
       };
     
       const sortData = (data) => {
@@ -242,13 +242,17 @@ const User = () => {
                 <div class="pageselectdashboard">
                     <p class="rowperpagedash">Rows per page</p>
                     <select class="listoptiondash">
-                        
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="50">50</option>
                         <option value="100">100</option>
                     </select>
                 </div>
+                <div class="add-and-delete-button">
+                  <button class="add-button button">Add</button>
+                  <button class="delete-button button">Delete</button>
+                </div>
+                
                 
             
             </div>

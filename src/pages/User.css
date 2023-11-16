@@ -106,6 +106,7 @@ tr:nth-child(even) {
 .delete-button {
   background-color: #f44336; /* Example color */
   color: white;
+  margin-left: 10px;
 }
 
 /* pageselect style */
@@ -137,4 +138,8 @@ tr:nth-child(even) {
   border-color: #F39C12;
   border-radius: 5px;
   color: white;
+}
+.add-and-delete-button {
+  margin-left: 10px;
+  padding-right: 10px;
 }
