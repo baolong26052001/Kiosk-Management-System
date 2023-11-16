@@ -154,7 +154,7 @@ const Dashboard = () => {
                     <p class="kiosktext">Total kiosk</p>
                     <div class="number-in-card">
                         <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage">(+10%)</p>
+                        <p class="percentage percentage-green">(+10%)</p>
                     </div>
                     <p class="kiosktext last-week-analytic">Last week analytic</p>
                 </div>
@@ -167,7 +167,7 @@ const Dashboard = () => {
                     <p class="kiosktext">Total kiosk online</p>
                     <div class="number-in-card">
                         <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage">(+10%)</p>
+                        <p class="percentage percentage-red">(-29%)</p>
                     </div>
                     
                     <p class="kiosktext last-week-analytic">Last week analytic</p>
@@ -181,7 +181,7 @@ const Dashboard = () => {
                     <p class="kiosktext">Total kiosk offline</p>
                     <div class="number-in-card">
                         <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage">(+10%)</p>
+                        <p class="percentage percentage-green">(+10%)</p>
                     </div>
                     <p class="kiosktext last-week-analytic">Last week analytic</p>
                 </div>
@@ -194,7 +194,7 @@ const Dashboard = () => {
                     <p class="kiosktext">Total transaction</p>
                     <div class="number-in-card">
                         <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage">(+10%)</p>
+                        <p class="percentage percentage-green">(+10%)</p>
                     </div>
                     <div class="last-week-div">
                         <p class="kiosktext last-week-analytic">Last week analytic</p>

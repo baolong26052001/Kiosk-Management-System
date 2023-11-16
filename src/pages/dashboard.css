@@ -242,6 +242,12 @@ tr:nth-child(even) {
     margin-bottom: -10px !important;
     margin-top: 25px;
 }
+.percentage-red {
+    color: red;
+}
+.percentage-green {
+    color: green;
+}
 .last-week-div {
     margin-bottom: 0px !important;
     padding-bottom: 10px !important;
