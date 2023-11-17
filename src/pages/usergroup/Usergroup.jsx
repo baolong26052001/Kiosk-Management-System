@@ -8,9 +8,9 @@ import Accordion from 'react-bootstrap/Accordion';
 import { render } from '@testing-library/react';
 
 //import css
-import './slideshow.css';
+import './Usergroup.css';
 
-const User = () => {
+const Usergroup = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedRows, setSelectedRows] = useState([]);
     const [selectAllChecked, setSelectAllChecked] = useState(false);
@@ -41,12 +41,12 @@ const User = () => {
         // Handle individual checkboxes
         if (checked) {
           // Add the selected item to the list
-          setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item.packageID]);
+          setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item.userGroupID]);
         } else {
           // Remove the selected item from the list
           setSelectedRows((prevSelectedRows) =>
             prevSelectedRows.filter(
-              (selectedItem) => selectedItem !== item.packageID
+              (selectedItem) => selectedItem !== item.userGroupID
             )
           );
         }
@@ -56,68 +56,68 @@ const User = () => {
     const data = [
 
         { 
-            packageName: 'Ads Promotion', 
-            packageID: 123, 
-            imagevideo: 'image1.jpg', 
+            groupName: 'Administrator', 
+            userGroupID: 123, 
+            
              
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
+            active: 'Yes', 
+            dateModified: '24-10-2023', 
+            dateCreated: '24-01-2023',
             
         },
 
         { 
-            packageName: 'Ads Promotion', 
-            packageID: 124, 
-            imagevideo: 'image1.jpg', 
+            groupName: 'Administrator', 
+            userGroupID: 124, 
+            
              
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
+            active: 'Yes', 
+            dateModified: '24-10-2023', 
+            dateCreated: '24-01-2023',
             
         },
 
         { 
-            packageName: 'Ads Promotion', 
-            packageID: 125, 
-            imagevideo: 'image1.jpg', 
+            groupName: 'Administrator', 
+            userGroupID: 125, 
+            
              
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
+            active: 'Yes', 
+            dateModified: '24-10-2023', 
+            dateCreated: '24-01-2023',
             
         },
         
         { 
-            packageName: 'Ads Promotion', 
-            packageID: 126, 
-            imagevideo: 'image1.jpg', 
+            groupName: 'Administrator', 
+            userGroupID: 126, 
+            
              
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
+            active: 'Yes', 
+            dateModified: '24-10-2023', 
+            dateCreated: '24-01-2023',
             
         },
 
         { 
-            packageName: 'Ads Promotion', 
-            packageID: 127, 
-            imagevideo: 'image1.jpg', 
+            groupName: 'Administrator', 
+            userGroupID: 127, 
+            
              
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
+            active: 'Yes', 
+            dateModified: '24-10-2023', 
+            dateCreated: '24-01-2023',
             
         },
 
         { 
-            packageName: 'Ads Promotion', 
-            packageID: 128, 
-            imagevideo: 'image1.jpg', 
+            groupName: 'Administrator', 
+            userGroupID: 128, 
+            
              
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
+            active: 'Yes', 
+            dateModified: '24-10-2023', 
+            dateCreated: '24-01-2023',
             
         },
 
@@ -167,7 +167,7 @@ const User = () => {
 
         <div class="admin-dashboard-text-div"> 
             <p></p>
-            <h1 class="h1-dashboard">Video slideshow Setup</h1>
+            <h1 class="h1-dashboard">User Group</h1>
         </div>
         
         
@@ -180,7 +180,7 @@ const User = () => {
                 <div class="searchdiv">
 
                 
-                    <input onChange={(event) => setSearchTermButton(event.target.value)} placeholder="  Search package ID..." type="text" id="packageID myInput" name="packageID" class="searchbar"></input>
+                    <input onChange={(event) => setSearchTermButton(event.target.value)} placeholder="  Search package ID..." type="text" id="userGroupID myInput" name="userGroupID" class="searchbar"></input>
                     
                     <input onClick={handleSearchButton} type="button" value="Search" class="button button-search"></input>
                 </div>
@@ -201,12 +201,12 @@ const User = () => {
                         </th>
                         <th></th>
                         <th></th>
-                        <th onClick={() => handleSort('packageID')}>Package ID {renderSortIcon('packageID')}</th>
-                        <th onClick={() => handleSort('packageName')}>Package Name {renderSortIcon('packageName')}</th>
-                        <th onClick={() => handleSort('imagevideo')}>Image/Video {renderSortIcon('imagevideo')}</th>
-                        <th onClick={() => handleSort('fileType')}>File Type {renderSortIcon('fileType')}</th>
-                        <th onClick={() => handleSort('startDate')}>Start Date {renderSortIcon('startDate')}</th>
-                        <th onClick={() => handleSort('endDate')}>End Date {renderSortIcon('endDate')}</th>
+                        <th onClick={() => handleSort('userGroupID')}>UserGroup ID {renderSortIcon('userGroupID')}</th>
+                        <th onClick={() => handleSort('groupName')}>Group Name {renderSortIcon('groupName')}</th>
+                        
+                        <th onClick={() => handleSort('active')}>Active {renderSortIcon('active')}</th>
+                        <th onClick={() => handleSort('dateModified')}>Date Modified {renderSortIcon('dateModified')}</th>
+                        <th onClick={() => handleSort('dateCreated')}>Date Created {renderSortIcon('dateCreated')}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -215,7 +215,7 @@ const User = () => {
                           <td>
                                 <input
                                 type="checkbox"
-                                checked={selectAllChecked || selectedRows.includes(item.packageID)}
+                                checked={selectAllChecked || selectedRows.includes(item.userGroupID)}
                                 onChange={(event) => handleCheckboxChange(event, item)}
                                 />
                             </td>
@@ -223,14 +223,14 @@ const User = () => {
                             <button class="view-button">View</button>
                             </td>
                             <td>
-                            <button class="edit-button">Edit</button>
+                            <button class="permission-button">Permission</button>
                             </td>
-                            <td>{item.packageID}</td>
-                            <td>{item.packageName}</td>
-                            <td>{item.imagevideo}</td>
-                            <td>{item.fileType}</td>
-                            <td>{item.startDate}</td>
-                            <td>{item.endDate}</td>
+                            <td>{item.userGroupID}</td>
+                            <td>{item.groupName}</td>
+                            
+                            <td>{item.active}</td>
+                            <td>{item.dateModified}</td>
+                            <td>{item.dateCreated}</td>
                             
                         </tr>
                         ))}
@@ -264,4 +264,4 @@ const User = () => {
   )
 }
 
-export default User;
+export default Usergroup;

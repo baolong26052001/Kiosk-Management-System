@@ -34,7 +34,12 @@ const App = () => {
             element={<RouteUser />} 
             />
 
-          <Route path="/usersgroup" element={<EmptyPage />} />
+          <Route 
+            path="/usersgroup" 
+            element={<RouteUsergroup />} 
+            />
+
+
           <Route path="/kiosksetup" element={<EmptyPage />} />
           <Route path="/kioskhardware" element={<EmptyPage />} />
           <Route path="/station" element={<EmptyPage />} />
@@ -92,6 +97,18 @@ const RouteUser = () => {
   return <User />;
 };
 
+const RouteUsergroup = () => {
+  const [Usergroup, setUsergroup] = React.useState(null);
+  React.useEffect(() => {
+    import('./pages/usergroup/Usergroup').then((module) => {
+      setUsergroup(() => module.default);
+    });
+  }, []);
+  if (!Usergroup) {
+    return null;
+  }
+  return <Usergroup />;
+};
 
 
 const RouteSlideshow = () => {
