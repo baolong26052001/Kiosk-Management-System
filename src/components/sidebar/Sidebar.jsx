@@ -51,17 +51,55 @@ const items = [
 // submenu keys of first level
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub3', 'sub4'];
 const Sidebar = () => {
+  let defaultSelectedKey = '0';
+  const currentPath = window.location.pathname;
+  console.log('Current Path:', currentPath);
+  
+  if (currentPath === '/users') {
+    defaultSelectedKey = '1';
+  } else if (currentPath === '/usersgroup') {
+    defaultSelectedKey = '2';
+  } else if (currentPath === '/kiosksetup') {
+    defaultSelectedKey = '3';
+  } else if (currentPath === '/kioskhardware') {
+    defaultSelectedKey = '4';
+  } else if (currentPath === '/station') {
+    defaultSelectedKey = '5';
+  } else if (currentPath === '/slideshow') {
+    defaultSelectedKey = '6';
+  } else if (currentPath === '/account') {
+    defaultSelectedKey = '7';
+  } else if (currentPath === '/loantransaction') {
+    defaultSelectedKey = '8';
+  } else if (currentPath === '/savingtransaction') {
+    defaultSelectedKey = '9';
+  } else if (currentPath === '/loanstatement') {
+    defaultSelectedKey = '10';
+  } else if (currentPath === '/savingstatement') {
+    defaultSelectedKey = '11';
+  } else if (currentPath === '/transactionlogs') {
+    defaultSelectedKey = '12';
+  } else if (currentPath === '/activitylogs') {
+    defaultSelectedKey = '13';
+  } else if (currentPath === '/notificationlogs') {
+    defaultSelectedKey = '14';
+  } else if (currentPath === '/audit') {
+    defaultSelectedKey = '15';
+  } else if (currentPath === '/kioskhealth') {
+    defaultSelectedKey = '16';
+  } else {
+    defaultSelectedKey = '17';
+  }
+  
 
-  const [openKeys, setOpenKeys] = useState(['17']);
+  const [openKeys, setOpenKeys] = useState([defaultSelectedKey]);
+  const [defaultOpenKeys, setDefaultOpenKeys] = useState([]);
 
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
-    if (latestOpenKey && rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-      setOpenKeys(keys);
-    } else {
-      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
-    }
+    setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
   };
+
 
   const handleMenuClick = (e) => {
     const clickedKey = e.key;
@@ -131,6 +169,7 @@ const Sidebar = () => {
       mode="inline"
       openKeys={openKeys}
       onOpenChange={onOpenChange}
+      defaultOpenKeys={defaultOpenKeys}
       style={{
         width: 256,
         top: "0px",
@@ -138,7 +177,7 @@ const Sidebar = () => {
         height: "100%",
         overflow: "hidden"
       }}
-      defaultSelectedKeys={['17']}
+      defaultSelectedKeys={[defaultSelectedKey]}
       items={items}
       onClick={handleMenuClick}
     >
