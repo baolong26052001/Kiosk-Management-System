@@ -6,7 +6,10 @@ import DataTable from 'react-data-table-component';
 import Accordion from 'react-bootstrap/Accordion';
 //import Sidebar from '../components/sidebar/Sidebar';
 import { render } from '@testing-library/react';
+
+// import css
 import './dashboard.css';
+
 
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -172,7 +175,7 @@ const Dashboard = () => {
                     <p class="kiosktext last-week-analytic">Last week analytic</p>
                 </div>
                 <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/totalkiosk.png')}></img>
+                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/totalkiosk.png')}></img>
                 </div>
             </div>
             <div class="card2">
@@ -186,7 +189,7 @@ const Dashboard = () => {
                     <p class="kiosktext last-week-analytic">Last week analytic</p>
                 </div>
                 <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/kioskonline.png')}></img>
+                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/kioskonline.png')}></img>
                 </div>
             </div>
             <div class="card3">
@@ -199,7 +202,7 @@ const Dashboard = () => {
                     <p class="kiosktext last-week-analytic">Last week analytic</p>
                 </div>
                 <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/kioskoffline.png')}></img>
+                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/kioskoffline.png')}></img>
                 </div>
             </div>
             <div class="card4">
@@ -215,7 +218,7 @@ const Dashboard = () => {
                     
                 </div>
                 <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../images/transaction.png')}></img>
+                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/transaction.png')}></img>
                 </div>
             </div>
         </div>
@@ -224,13 +227,13 @@ const Dashboard = () => {
             <div class="bigcarddashboard">
                 <div class="statusandimage">
                     <h3 class="kioskstatus">Kiosk Status</h3>
-                    <img class="icononline" width="10px" height="10px" src={require('../images/online.png')}></img>
+                    <img class="icononline" width="10px" height="10px" src={require('../../images/online.png')}></img>
                     <h5 class="onlinetext">Online</h5>
-                    <img class="iconoffline" width="10px" height="10px" src={require('../images/offline.png')}></img>
+                    <img class="iconoffline" width="10px" height="10px" src={require('../../images/offline.png')}></img>
                     <h5 class="offlinetext">Offline</h5>
-                    <img class="iconpaperlow" width="10px" height="10px" src={require('../images/paperlow.png')}></img>
+                    <img class="iconpaperlow" width="10px" height="10px" src={require('../../images/paperlow.png')}></img>
                     <h5 class="paperlowtext">Paper Low</h5>
-                    <img class="iconnopaper" width="10px" height="10px" src={require('../images/nopaper.png')}></img>
+                    <img class="iconnopaper" width="10px" height="10px" src={require('../../images/nopaper.png')}></img>
                     <h5 class="nopapertext">No Paper</h5>
                 </div>
                 
@@ -266,19 +269,19 @@ const Dashboard = () => {
                             <td>{item.kioskID}</td>
                             <td>{item.stationCode}</td>
                             <td>
-                                <img class="icononlinetable" width="10px" height="10px" src={require('../images/online.png')}></img>
+                                <img class="icononlinetable" width="10px" height="10px" src={require('../../images/online.png')}></img>
                                 {item.heartbeatUpdate}
                             </td>
                             <td>
-                                <img class="icononlinetable" width="10px" height="10px" src={require('../images/online.png')}></img>
+                                <img class="icononlinetable" width="10px" height="10px" src={require('../../images/online.png')}></img>
                                 {item.cameraUpdate}
                             </td>
                             <td>
-                                <img class="icononlinetable" width="10px" height="10px" src={require('../images/online.png')}></img>
+                                <img class="icononlinetable" width="10px" height="10px" src={require('../../images/online.png')}></img>
                                 {item.scannerUpdate}
                             </td>
                             <td>
-                                <img class="icononlinetable" width="10px" height="10px" src={require('../images/online.png')}></img>
+                                <img class="icononlinetable" width="10px" height="10px" src={require('../../images/online.png')}></img>
                                 {item.cashDepositUpdate}
                             </td>
                         </tr>

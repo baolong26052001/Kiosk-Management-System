@@ -6,6 +6,8 @@ import DataTable from 'react-data-table-component';
 import Accordion from 'react-bootstrap/Accordion';
 //import Sidebar from '../components/sidebar/Sidebar';
 import { render } from '@testing-library/react';
+
+//import css
 import './User.css';
 
 const User = () => {
