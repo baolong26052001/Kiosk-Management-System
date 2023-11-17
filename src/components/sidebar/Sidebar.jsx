@@ -52,48 +52,68 @@ const items = [
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub3', 'sub4'];
 const Sidebar = () => {
   let defaultSelectedKey = '0';
+  let subMenuSelect = '0';
   const currentPath = window.location.pathname;
   console.log('Current Path:', currentPath);
   
   if (currentPath === '/users') {
     defaultSelectedKey = '1';
+    subMenuSelect = 'sub1';
   } else if (currentPath === '/usersgroup') {
     defaultSelectedKey = '2';
+    subMenuSelect = 'sub1';
   } else if (currentPath === '/kiosksetup') {
     defaultSelectedKey = '3';
+    subMenuSelect = 'sub1';
   } else if (currentPath === '/kioskhardware') {
     defaultSelectedKey = '4';
+    subMenuSelect = 'sub1';
   } else if (currentPath === '/station') {
     defaultSelectedKey = '5';
+    subMenuSelect = 'sub1';
   } else if (currentPath === '/slideshow') {
     defaultSelectedKey = '6';
+    subMenuSelect = 'sub1';
   } else if (currentPath === '/account') {
     defaultSelectedKey = '7';
+    subMenuSelect = 'sub2';
   } else if (currentPath === '/loantransaction') {
     defaultSelectedKey = '8';
+    subMenuSelect = 'sub2';
   } else if (currentPath === '/savingtransaction') {
     defaultSelectedKey = '9';
+    subMenuSelect = 'sub2';
   } else if (currentPath === '/loanstatement') {
     defaultSelectedKey = '10';
+    subMenuSelect = 'sub2';
   } else if (currentPath === '/savingstatement') {
     defaultSelectedKey = '11';
+    subMenuSelect = 'sub2';
   } else if (currentPath === '/transactionlogs') {
     defaultSelectedKey = '12';
+    subMenuSelect = 'sub3';
   } else if (currentPath === '/activitylogs') {
     defaultSelectedKey = '13';
+    subMenuSelect = 'sub3';
   } else if (currentPath === '/notificationlogs') {
     defaultSelectedKey = '14';
+    subMenuSelect = 'sub3';
   } else if (currentPath === '/audit') {
     defaultSelectedKey = '15';
+    subMenuSelect = 'sub3';
   } else if (currentPath === '/kioskhealth') {
     defaultSelectedKey = '16';
+    subMenuSelect = 'sub4';
   } else {
     defaultSelectedKey = '17';
   }
   
 
-  const [openKeys, setOpenKeys] = useState([defaultSelectedKey]);
+  const [openKeys, setOpenKeys] = useState([subMenuSelect]);
   const [defaultOpenKeys, setDefaultOpenKeys] = useState([]);
+
+  //const [openKeys, setOpenKeys] = useState(['sub1']);
+  //const [defaultOpenKeys, setDefaultOpenKeys] = useState(['sub1']);
 
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
