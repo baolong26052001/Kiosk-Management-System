@@ -41,7 +41,7 @@ const App = () => {
 
 
           <Route path="/kiosksetup" element={<EmptyPage />} />
-          <Route path="/kioskhardware" element={<EmptyPage />} />
+          <Route path="/kioskhardware" element={<RoutekioskHardware />} />
           <Route path="/station" element={<EmptyPage />} />
 
           <Route
@@ -124,6 +124,19 @@ const RouteSlideshow = () => {
   return <Slideshow />;
 };
 
+const RoutekioskHardware = () => {
+  const [KioskHardware, setKioskHardware] = React.useState(null);
+  React.useEffect(() => {
+    import('./pages/kiosk-hardware/kioskHardware').then((module) => {
+      setKioskHardware(() => module.default);
+    });
+  }, []);
+
+  if (!KioskHardware) {
+    return null;
+  }
+  return <KioskHardware />
+};
 
 
 export default App;
