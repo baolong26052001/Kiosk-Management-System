@@ -167,7 +167,7 @@ const User = () => {
 
         <div class="admin-dashboard-text-div"> 
             <p></p>
-            <h1 class="h1-dashboard">Video slideshow Setup</h1>
+            <h1 class="h1-dashboard">Video Slideshow Setup</h1>
         </div>
         
         
