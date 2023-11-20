@@ -12,12 +12,9 @@ p {
     color: #2C3775;
 }
 .content {
-    margin-top: 30px;
     width: 100%;
 }
-.admin-dashboard-text-div {
-    padding-top: 20px;
-}
+
 .h1-dashboard {
     margin-top: -15px;
 }

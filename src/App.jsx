@@ -22,11 +22,61 @@ const App = () => {
   return (
     <div> 
      
-
-
      <Router>
-      <div style={{ display: 'flex' }}>
-        <Sidebar />
+      <div>
+
+        <Box>
+          <Grid container spacing={0}>
+            <Grid xs={2}>
+              <Sidebar />
+            </Grid>
+            <Grid xs={10}>
+              <Headerbar />
+              <div className='Dashboard-table'>
+              <Routes> 
+                <Route 
+                  path="/" 
+                  element={<RouteDashboard />} 
+                  />
+
+                <Route 
+                  path="/users" 
+                  element={<RouteUser />} 
+                  />
+
+                <Route 
+                  path="/usersgroup" 
+                  element={<RouteUsergroup />} 
+                  />
+
+
+                <Route path="/kiosksetup" element={<RouteKioskSetup />} />
+                <Route path="/kioskhardware" element={<RoutekioskHardware />} />
+                <Route path="/station" element={<EmptyPage />} />
+
+                <Route
+                    path="/slideshow"
+                    element={<RouteSlideshow />}
+                  />
+
+                <Route path="/account" element={<EmptyPage />} />
+                <Route path="/loantransaction" element={<EmptyPage />} />
+                <Route path="/savingtransaction" element={<EmptyPage />} />
+                <Route path="/loanstatement" element={<EmptyPage />} />
+                <Route path="/savingstatement" element={<EmptyPage />} />
+                <Route path="/transactionlogs" element={<EmptyPage />} />
+                <Route path="/activitylogs" element={<EmptyPage />} />
+                <Route path="/notificationlogs" element={<EmptyPage />} />
+                <Route path="/audit" element={<EmptyPage />} />
+                <Route path="/kioskhealth" element={<EmptyPage />} />
+
+              </Routes>
+              </div>
+            </Grid>
+          </Grid>
+        </Box>
+        
+{/* 
         <Routes>
 
           <Route 
@@ -65,7 +115,7 @@ const App = () => {
           <Route path="/audit" element={<EmptyPage />} />
           <Route path="/kioskhealth" element={<EmptyPage />} />
           
-        </Routes>
+        </Routes> */}
       </div>
     </Router>
     </div>
