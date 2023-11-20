@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu, Switch } from 'antd';
-import DataTable from 'react-data-table-component';
+import {EyeOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 
-import Accordion from 'react-bootstrap/Accordion';
 //import Sidebar from '../components/sidebar/Sidebar';
 import { render } from '@testing-library/react';
 
@@ -175,7 +172,7 @@ const KioskHardware = () => {
                                 />
                             </td>
                             <td>
-                            <button class="view-button">View</button>
+                            <button class="view-button"><EyeOutlined /> View</button>
                             </td>
                             <td>{item.kioskID}</td>
                             <td>{item.availbleMemory}</td>
@@ -201,8 +198,8 @@ const KioskHardware = () => {
                     </select>
                 </div>
                 <div class="add-and-delete-button">
-                  <button class="add-button button">Add</button>
-                  <button class="delete-button button">Delete</button>
+                  <button class="add-button button"><PlusOutlined /> Add</button>
+                  <button class="delete-button button"><DeleteOutlined /> Delete</button>
                 </div>
                 
                 

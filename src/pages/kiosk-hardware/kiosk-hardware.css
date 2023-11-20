@@ -224,30 +224,6 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
-  .area {
-    padding: 2px 16px;
-  }
-  .number-in-card {
-    padding: 0px !important;
-    display: flex;
-  }
-  .percentage {
-    margin-left: 30px !important;
-    padding-top: 0px !important;
-    margin-bottom: -10px !important;
-    margin-top: 25px;
-  }
-  .percentage-red {
-    color: red;
-  }
-  .percentage-green {
-    color: green;
-  }
-  .last-week-div {
-    margin-bottom: 0px !important;
-    padding-bottom: 10px !important;
-    height: 20px !important;
-  }
   .arrow {
     font-size: 10px;
   }
@@ -267,14 +243,14 @@ body {
     border-color: #12CAF3;
     border-radius: 5px;
     color: white;
-    width: 45px;
+    width: auto;
   }
   .edit-button {
     background-color: #F39C12;
     border-color: #F39C12;
     border-radius: 5px;
     color: white;
-    width: 45px;
+    width: auto;
   }
   .add-and-delete-button {
     margin-left: 10px;
