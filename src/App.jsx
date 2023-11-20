@@ -22,8 +22,6 @@ const App = () => {
   return (
     <div> 
      
-
-
      <Router>
       <div style={{ display: 'flex' }}>
         <Sidebar />
