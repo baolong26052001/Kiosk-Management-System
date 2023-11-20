@@ -252,7 +252,7 @@ const Usergroup = () => {
                                 multiple
                                 value={personName}
                                 onChange={handleChange}
-                                input={<OutlinedInput label="Tag" />}
+                                input={<OutlinedInput label="Group Name" />}
                                 renderValue={(selected) => selected.join(', ')}
                                 MenuProps={MenuProps}
                               >
@@ -278,7 +278,7 @@ const Usergroup = () => {
                                 
                                 value={activeName}
                                 onChange={handleActiveChange}
-                                input={<OutlinedInput label="Tag" />}
+                                input={<OutlinedInput label="Active" />}
                                 renderValue={(selected) => selected.join(', ')}
                                 MenuProps={MenuProps}
                               >
