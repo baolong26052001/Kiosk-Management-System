@@ -9,6 +9,11 @@ import EmptyPage from './pages/empty';
 //import Dashboard from './pages/dashboard/dashboard';
 //import User from './pages/user/User';
 //import Slideshow from './pages/slideshow/slideshow';
+
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import Box from '@mui/material/Box';
+
+import KioskSetup from './pages/kiosk-setup/kiosk-setup';
 import { render } from '@testing-library/react';
 //import { Outlet, Link, Route } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -16,7 +21,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <div> 
-     <Headerbar />
+     
+
 
      <Router>
       <div style={{ display: 'flex' }}>
@@ -62,7 +68,6 @@ const App = () => {
         </Routes>
       </div>
     </Router>
-     
     </div>
   )
 }

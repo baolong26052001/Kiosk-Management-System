@@ -1,67 +1,80 @@
-import React from 'react';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import './header.css';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
 
-const { Header } = Layout;
-const Headerbar = () => {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+export default function MenuAppBar() {
+  const [auth, setAuth] = React.useState(true);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleChange = (event) => {
+    setAuth(event.target.checked);
+  };
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
-    <Layout className="layout">
-      <Header
-        style={{
-          width: '100%',
-          position: 'fixed',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          background: 'white',
-        }}
-      >
-        <div className="demo-logo">
-            <img className="logo" src={require(`../../images/logoheader.png`)} />
-            <h4 className="textloan">Loan Kiosk Management System</h4>
-        </div>
-
-        <div className="textinheader">
-            
-        </div>
-        <div className="menu-header">
-
-        
-        <Menu
-          theme="white"
-          mode="horizontal"
-          style={{
-            backgroundColor: 'transparent',  
-          }}
-          selectedKeys={[]}
-          onClick={() => null}  
-        >
-          {[1, 2].map((key) => (
-            <Menu.Item
-              key={key}
-              style={{
-                color: 'inherit',  
-                background: 'transparent',  
-              }}
-            >
-              <img
-                className="iconheader"
-                width="20px"
-                height="20px"
-                src={require(`../../images/${key === 1 ? 'bell.png' : 'Avatar.png'}`)}
-                alt={`Icon ${key}`}
-              />
-            </Menu.Item>
-          ))}
-        </Menu>
-        </div>
-      </Header>
-    </Layout>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" style={{ background: '#FFFFFF' }}>
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="white"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" color={'black'} sx={{ flexGrow: 1 }}>
+            Loan Kiosk Management System
+          </Typography>
+          {auth && (
+            <div>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="white"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+              </Menu>
+            </div>
+          )}
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
-};
-
-export default Headerbar;
+}

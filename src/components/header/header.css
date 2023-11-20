@@ -1,18 +1,4 @@
-.ant-layout-header {
-    height: 42px;
-}
-.layout {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    
-}
-.ant-layout-header{
-    z-index: 1;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-.textinheader {
-    justify-content: left;
-}
-.textloan {
+h1, h2, h3, h4, h5, h6, p {
     font-family: 'DM Sans', sans-serif;
 }
 .demo-logo {

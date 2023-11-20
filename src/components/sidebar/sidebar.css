@@ -7,8 +7,12 @@
 }
 .ant-menu-dark {
     background-color: #2F3349;
-    margin-top: 42px;
+    position: fixed;
+    height: 100vh;
+    width: 16.6%; 
+    overflow: auto; 
 }
+
 .ant-menu {
     z-index: 1;
 }
