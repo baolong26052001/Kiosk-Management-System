@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu, Row, Switch, Col } from 'antd';
+import { Menu, Row, Switch, Col, Divider } from 'antd';
 import DataTable from 'react-data-table-component';
 import './App.css';
-import Accordion from 'react-bootstrap/Accordion';
 import Sidebar from './components/sidebar/Sidebar';
 import Headerbar from './components/header/Header';
 import EmptyPage from './pages/empty';
@@ -23,7 +22,7 @@ const App = () => {
       <div>
         <Row>
           <Col span={4}><Sidebar /></Col>
-          <Col span={20}>
+          <Col span={19}  offset={1} >
             <Routes>
             <Route 
               path="/" 

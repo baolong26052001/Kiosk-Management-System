@@ -28,14 +28,10 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:where(.css-dev-only-do-not-override-xu9wm8).ant-col-offset-1 {
+  margin-inline-start: 30px;
 }
+
 
 .ant-menu-item-selected {
   background-color: #ff18ec; /* Change the background color for the selected item */

@@ -5,12 +5,7 @@ body {
   tr:nth-child(even) {
     background-color: #ffffff !important;
   }
-  h1 {
-    /* margin-left: 280px; */
-    color: #2C3775;
-  }
-  p {
-    /* margin-left: 280px; */
+  h1, p {
     color: #2C3775;
   }
   .content {
@@ -31,7 +26,6 @@ body {
     margin-bottom: 30px;
     margin-right: 20px;
     z-index: 0;
-    /* margin-left: 280px; */
     padding-bottom: 20px;
   }
   .tablediv {
