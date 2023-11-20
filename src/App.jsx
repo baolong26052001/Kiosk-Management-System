@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu, Switch } from 'antd';
+import { Menu, Row, Switch, Col, Divider } from 'antd';
 import DataTable from 'react-data-table-component';
 import './App.css';
-import Accordion from 'react-bootstrap/Accordion';
 import Sidebar from './components/sidebar/Sidebar';
 import Headerbar from './components/header/Header';
 import EmptyPage from './pages/empty';
@@ -18,10 +17,53 @@ const App = () => {
   return (
     <div> 
      <Headerbar />
-     <Sidebar />
+
      <Router>
-      <div style={{ display: 'flex' }}>
-        <Sidebar />
+      <div>
+        <Row>
+          <Col span={4}><Sidebar /></Col>
+          <Col span={19}  offset={1} >
+            <Routes>
+            <Route 
+              path="/" 
+              element={<RouteDashboard />} 
+              />
+
+            <Route 
+              path="/users" 
+              element={<RouteUser />} 
+              />
+
+            <Route 
+              path="/usersgroup" 
+              element={<RouteUsergroup />} 
+              />
+
+
+            <Route path="/kiosksetup" element={<RouteKioskSetup />} />
+            <Route path="/kioskhardware" element={<RoutekioskHardware />} />
+            <Route path="/station" element={<EmptyPage />} />
+
+            <Route
+                path="/slideshow"
+                element={<RouteSlideshow />}
+              />
+
+            <Route path="/account" element={<EmptyPage />} />
+            <Route path="/loantransaction" element={<EmptyPage />} />
+            <Route path="/savingtransaction" element={<EmptyPage />} />
+            <Route path="/loanstatement" element={<EmptyPage />} />
+            <Route path="/savingstatement" element={<EmptyPage />} />
+            <Route path="/transactionlogs" element={<EmptyPage />} />
+            <Route path="/activitylogs" element={<EmptyPage />} />
+            <Route path="/notificationlogs" element={<EmptyPage />} />
+            <Route path="/audit" element={<EmptyPage />} />
+            <Route path="/kioskhealth" element={<EmptyPage />} />
+
+            </Routes>
+          </Col>
+        </Row>
+        {/* <Sidebar />
         <Routes>
 
           <Route 
@@ -40,8 +82,8 @@ const App = () => {
             />
 
 
-          <Route path="/kiosksetup" element={<EmptyPage />} />
-          <Route path="/kioskhardware" element={<EmptyPage />} />
+          <Route path="/kiosksetup" element={<RouteKioskSetup />} />
+          <Route path="/kioskhardware" element={<RoutekioskHardware />} />
           <Route path="/station" element={<EmptyPage />} />
 
           <Route
@@ -60,7 +102,7 @@ const App = () => {
           <Route path="/audit" element={<EmptyPage />} />
           <Route path="/kioskhealth" element={<EmptyPage />} />
           
-        </Routes>
+        </Routes> */}
       </div>
     </Router>
      
@@ -122,6 +164,34 @@ const RouteSlideshow = () => {
     return null;
   }
   return <Slideshow />;
+};
+
+const RoutekioskHardware = () => {
+  const [KioskHardware, setKioskHardware] = React.useState(null);
+  React.useEffect(() => {
+    import('./pages/kiosk-hardware/kioskHardware').then((module) => {
+      setKioskHardware(() => module.default);
+    });
+  }, []);
+
+  if (!KioskHardware) {
+    return null;
+  }
+  return <KioskHardware />
+};
+
+const RouteKioskSetup = () => {
+  const [KioskSetup, setKioskSetup] = React.useState(null);
+  React.useEffect(() => {
+    import('./pages/kiosk-setup/kiosk-setup').then((module) => {
+      setKioskSetup(() => module.default);
+    });
+  }, []);
+
+  if (!KioskSetup) {
+    return null;
+  }
+  return <KioskSetup />
 };
 
 

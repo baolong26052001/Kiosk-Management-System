@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu, Switch } from 'antd';
+//import { Col, Menu, Switch } from 'antd';
 import DataTable from 'react-data-table-component';
 
 import Accordion from 'react-bootstrap/Accordion';
@@ -9,6 +9,9 @@ import { render } from '@testing-library/react';
 
 // import css
 import './dashboard.css';
+
+// import react bootstrap
+import { Container } from 'react-bootstrap';
 
 
 const Dashboard = () => {
@@ -222,6 +225,7 @@ const Dashboard = () => {
                 </div>
             </div>
         </div>
+
         
         
             <div class="bigcarddashboard">
