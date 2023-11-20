@@ -19,51 +19,8 @@ const App = () => {
      <Headerbar />
 
      <Router>
-      <div>
-        <Row>
-          <Col span={4}><Sidebar /></Col>
-          <Col span={19}  offset={1} >
-            <Routes>
-            <Route 
-              path="/" 
-              element={<RouteDashboard />} 
-              />
-
-            <Route 
-              path="/users" 
-              element={<RouteUser />} 
-              />
-
-            <Route 
-              path="/usersgroup" 
-              element={<RouteUsergroup />} 
-              />
-
-
-            <Route path="/kiosksetup" element={<RouteKioskSetup />} />
-            <Route path="/kioskhardware" element={<RoutekioskHardware />} />
-            <Route path="/station" element={<EmptyPage />} />
-
-            <Route
-                path="/slideshow"
-                element={<RouteSlideshow />}
-              />
-
-            <Route path="/account" element={<EmptyPage />} />
-            <Route path="/loantransaction" element={<EmptyPage />} />
-            <Route path="/savingtransaction" element={<EmptyPage />} />
-            <Route path="/loanstatement" element={<EmptyPage />} />
-            <Route path="/savingstatement" element={<EmptyPage />} />
-            <Route path="/transactionlogs" element={<EmptyPage />} />
-            <Route path="/activitylogs" element={<EmptyPage />} />
-            <Route path="/notificationlogs" element={<EmptyPage />} />
-            <Route path="/audit" element={<EmptyPage />} />
-            <Route path="/kioskhealth" element={<EmptyPage />} />
-
-            </Routes>
-          </Col>
-        </Row>
-        {/* <Sidebar />
+      <div style={{ display: 'flex' }}>
+        <Sidebar />
         <Routes>
 
           <Route 
@@ -102,7 +59,7 @@ const App = () => {
           <Route path="/audit" element={<EmptyPage />} />
           <Route path="/kioskhealth" element={<EmptyPage />} />
           
-        </Routes> */}
+        </Routes>
       </div>
     </Router>
      
