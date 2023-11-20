@@ -20,7 +20,7 @@ const App = () => {
      <Headerbar />
      <Sidebar />
      <Router>
-      <div style={{ display: 'flex' }}>
+      
         <Sidebar />
         <Routes>
 
@@ -61,7 +61,7 @@ const App = () => {
           <Route path="/kioskhealth" element={<EmptyPage />} />
           
         </Routes>
-      </div>
+      
     </Router>
      
     </div>

@@ -93,9 +93,20 @@ body {
     display: flex;
     
   }
+  
+  
   .listoptiondash {
     margin-left: 10px;
     margin-top: 20px;
+  }
+  .listoptionfilter {
+    margin-left: 10px;
+    
+    width: 33%;
+    height: 40px;
+  }
+  .filter-text {
+    margin-left: 10px !important;
   }
   .area {
     padding: 10px;

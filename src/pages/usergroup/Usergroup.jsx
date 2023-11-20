@@ -173,10 +173,18 @@ const Usergroup = () => {
         
         
             <div class="bigcarddashboard">
-                <div class="statusandimage">
-                    
+                <div class="filterpart">
+                <p class="filter-text">Group Name</p>
+                    <select class="listoptionfilter">
+                        <option value="Administrator">Administrator</option>
+                        <option value="Support">Support</option>
+                        <option value="Manager">Manager</option>
+                        
+                    </select>
                 </div>
-                
+
+                    
+
                 <div class="searchdiv">
 
                 
@@ -220,7 +228,7 @@ const Usergroup = () => {
                                 />
                             </td>
                             <td>
-                            <button class="view-button">View</button>
+                            <button class="edit-button">Edit</button>
                             </td>
                             <td>
                             <button class="permission-button">Permission</button>

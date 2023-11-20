@@ -256,3 +256,6 @@ tr:nth-child(even) {
 .arrow {
     font-size: 10px;
 }
+:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-horizontal {
+	border-bottom: 0px solid rgba(5, 5, 5, 0.06) !important;
+}
