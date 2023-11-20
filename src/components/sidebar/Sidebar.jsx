@@ -5,7 +5,7 @@ import { Menu } from 'antd';
 import './sidebar.css';
 import { Outlet, Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
-
+import Divider from '@mui/material/Divider';
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -184,43 +184,39 @@ const Sidebar = () => {
   };
 
   return (
-    <Menu
-      theme="dark"
-      mode="inline"
-      openKeys={openKeys}
-      onOpenChange={onOpenChange}
-      defaultOpenKeys={defaultOpenKeys}
-      style={{
-        width: 256,
-        top: "0px",
-        position: "fixed",
-        height: "100%",
-        overflow: "hidden"
-      }}
-      defaultSelectedKeys={[defaultSelectedKey]}
-      items={items}
-      onClick={handleMenuClick}
-    >
-      {items.map((item) => {
-        if (item.children) {
-          return (
-            <Menu.SubMenu key={item.key} title={item.label} icon={item.icon}>
-              {item.children.map((subItem) => (
-                <Menu.Item key={subItem.key} icon={subItem.icon}>
-                  <Link to={`/route/${subItem.key}`}>{subItem.label}</Link>
-                </Menu.Item>
-              ))}
-            </Menu.SubMenu>
-          );
-        } else {
-          return (
-            <Menu.Item key={item.key} icon={item.icon}>
-              <Link to={`/route/${item.key}`}>{item.label}</Link>
-            </Menu.Item>
-          );
-        }
-      })}
-    </Menu>
+    
+      <Menu
+        theme="dark"
+        mode="inline"
+        openKeys={openKeys}
+        onOpenChange={onOpenChange}
+        defaultOpenKeys={defaultOpenKeys}
+        defaultSelectedKeys={[defaultSelectedKey]}
+        items={items}
+        onClick={handleMenuClick}
+      >
+        
+        {items.map((item) => {
+          if (item.children) {
+            return (
+              <Menu.SubMenu key={item.key} title={item.label} icon={item.icon}>
+                {item.children.map((subItem) => (
+                  <Menu.Item key={subItem.key} icon={subItem.icon}>
+                    <Link to={`/route/${subItem.key}`}>{subItem.label}</Link>
+                  </Menu.Item>
+                ))}
+              </Menu.SubMenu>
+            );
+          } else {
+            return (
+              <Menu.Item key={item.key} icon={item.icon}>
+                <Link to={`/route/${item.key}`}>{item.label}</Link>
+              </Menu.Item>
+            );
+          }
+        })}
+      </Menu>
+    
   );
 
 };

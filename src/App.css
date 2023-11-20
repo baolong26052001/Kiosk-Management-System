@@ -28,8 +28,12 @@
   color: #61dafb;
 }
 
+.Dashboard-table {
+  margin-left: 20px;
+}
+
 :where(.css-dev-only-do-not-override-xu9wm8).ant-col-offset-1 {
-  margin-inline-start: 30px;
+  margin-inline-start: 10px;
 }
 
 
