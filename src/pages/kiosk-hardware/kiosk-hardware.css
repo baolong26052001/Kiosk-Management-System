@@ -6,11 +6,11 @@ body {
     background-color: #ffffff !important;
   }
   h1 {
-    margin-left: 280px;
+    /* margin-left: 280px; */
     color: #2C3775;
   }
   p {
-    margin-left: 280px;
+    /* margin-left: 280px; */
     color: #2C3775;
   }
   .content {
@@ -31,7 +31,7 @@ body {
     margin-bottom: 30px;
     margin-right: 20px;
     z-index: 0;
-    margin-left: 280px;
+    /* margin-left: 280px; */
     padding-bottom: 20px;
   }
   .tablediv {
@@ -92,17 +92,6 @@ body {
     margin-left: 10px;
     margin-top: 20px;
   }
-  .area {
-    padding: 10px;
-  }
-  .rowperpagedash {
-    color:black;
-    margin-left: 0px !important;
-  }
-  .kioskstatus {
-    margin-left: 10px;
-    color: #2C3775;
-  }
   .searchdiv {
     width: 100%;
     display:flex;
@@ -126,14 +115,6 @@ body {
     border-bottom-left-radius: 0px !important;
     height: 30px !important;
     font-weight: normal !important;
-  }
-  .kiosktext {
-    margin-left: 0px;
-    margin-bottom: 0px;
-    height: 5px;
-  }
-  .numberkiosk {
-    height: 10px;
   }
   table {
     font-family: arial, sans-serif;
