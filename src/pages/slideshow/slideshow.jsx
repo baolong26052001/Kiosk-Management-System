@@ -22,6 +22,7 @@ import FormControl from '@mui/material/FormControl';
 import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
+import { DataGrid } from '@mui/x-data-grid';
 
 
 //import css
@@ -50,6 +51,7 @@ const User = () => {
     const [valueStartDate, setValueStartDate] = React.useState(dayjs('2023-04-30'));
     const [valueEndDate, setValueEndDate] = React.useState(dayjs('2023-04-30'));
     const [packageName, setPackageName] = React.useState([]);
+    
 
     const names = [
       'Ads Promotion 1',
@@ -102,7 +104,30 @@ const User = () => {
         }
       }
   };
+  
+    const columns = [
+        { field: 'id', headerName: 'Package ID', width: 130 },
+        { field: 'packageName', headerName: 'Package Name', width: 130 },
+        { field: 'imageVideo', headerName: 'Image/Video', width: 130 },
+        { field: 'fileType', headerName: 'File Type', width: 130 },
+        { field: 'startDate', headerName: 'Start Date', width: 130 },
+        { field: 'endDate', headerName: 'End Date', width: 130 },
+       
+        
+      ];
 
+    const rows = [
+        { id: 1, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 2, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 3, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 4, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 5, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 6, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 7, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 8, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 9, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+      ];
+      
     const data = [
 
         { 
@@ -216,7 +241,7 @@ const User = () => {
     <div class="content"> 
 
         <div class="admin-dashboard-text-div"> 
-            <p></p>
+            
             <h1 class="h1-dashboard">Video Slideshow Setup</h1>
         </div>
         
@@ -297,69 +322,24 @@ const User = () => {
                 </div>
 
                 <div class="tablediv">
-
+                  <DataGrid
+                    rows={rows}
+                    columns={columns}
+                    initialState={{
+                      pagination: {
+                        paginationModel: { page: 0, pageSize: 5 },
+                      },
+                    }}
+                    pageSizeOptions={[5, 10]}
+                    checkboxSelection
+                  />                
                 
-                <table id="myTable">
-                    <thead>
-                        <tr>
-                        <th>
-                            <input
-                            type="checkbox"
-                            name="selectAll"
-                            checked={selectAllChecked}
-                            onChange={(event) => handleCheckboxChange(event, null)}
-                            />
-                        </th>
-                        <th></th>
-                        <th></th>
-                        <th onClick={() => handleSort('packageID')}>Package ID {renderSortIcon('packageID')}</th>
-                        <th onClick={() => handleSort('packageName')}>Package Name {renderSortIcon('packageName')}</th>
-                        <th onClick={() => handleSort('imagevideo')}>Image/Video {renderSortIcon('imagevideo')}</th>
-                        <th onClick={() => handleSort('fileType')}>File Type {renderSortIcon('fileType')}</th>
-                        <th onClick={() => handleSort('startDate')}>Start Date {renderSortIcon('startDate')}</th>
-                        <th onClick={() => handleSort('endDate')}>End Date {renderSortIcon('endDate')}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredData.map((item, index) => (
-                        <tr key={index}>
-                          <td>
-                                <input
-                                type="checkbox"
-                                checked={selectAllChecked || selectedRows.includes(item.packageID)}
-                                onChange={(event) => handleCheckboxChange(event, item)}
-                                />
-                            </td>
-                            <td>
-                            <button class="view-button">View</button>
-                            </td>
-                            <td>
-                            <button class="edit-button">Edit</button>
-                            </td>
-                            <td>{item.packageID}</td>
-                            <td>{item.packageName}</td>
-                            <td>{item.imagevideo}</td>
-                            <td>{item.fileType}</td>
-                            <td>{item.startDate}</td>
-                            <td>{item.endDate}</td>
-                            
-                        </tr>
-                        ))}
-                    </tbody>
-                </table>
+                
                 
                 </div>
                 
 
-                <div class="pageselectdashboard">
-                    <p class="rowperpagedash">Rows per page</p>
-                    <select class="listoptiondash">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select>
-                </div>
+                
                 <div class="add-and-delete-button">
                   <button class="add-button button">Add</button>
                   <button class="delete-button button">Delete</button>
