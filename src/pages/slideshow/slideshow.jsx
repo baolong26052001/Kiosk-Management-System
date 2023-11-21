@@ -106,26 +106,26 @@ const User = () => {
   };
   
     const columns = [
-        { field: 'id', headerName: 'Package ID', width: 130 },
-        { field: 'packageName', headerName: 'Package Name', width: 130 },
-        { field: 'imageVideo', headerName: 'Image/Video', width: 130 },
-        { field: 'fileType', headerName: 'File Type', width: 130 },
-        { field: 'startDate', headerName: 'Start Date', width: 130 },
-        { field: 'endDate', headerName: 'End Date', width: 130 },
+        { field: 'id', headerName: 'Package ID', width: 130, flex: 1 },
+        { field: 'packageName', headerName: 'Package Name', width: 130, flex: 1 },
+        { field: 'imageVideo', headerName: 'Image/Video', width: 130, flex: 1 },
+        { field: 'fileType', headerName: 'File Type', width: 130, flex: 1 },
+        { field: 'startDate', headerName: 'Start Date', width: 130, flex: 1 },
+        { field: 'endDate', headerName: 'End Date', width: 130, flex: 1 },
        
         
       ];
 
     const rows = [
-        { id: 1, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 2, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 3, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 4, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 5, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 6, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 7, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 8, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 9, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 123, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 234, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 345, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 456, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 567, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 678, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 789, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 888, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 901, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
       ];
       
     const data = [

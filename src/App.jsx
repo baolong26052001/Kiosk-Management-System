@@ -5,6 +5,7 @@ import DataTable from 'react-data-table-component';
 import './App.css';
 import Sidebar from './components/sidebar/Sidebar';
 import Headerbar from './components/header/Header';
+import Login from './pages/login/login';
 import EmptyPage from './pages/empty';
 //import Dashboard from './pages/dashboard/dashboard';
 //import User from './pages/user/User';
@@ -20,22 +21,47 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div> 
-     
-     <Router>
-      <div>
+    <div>
+      <Router>
+        <div>
+          <Box>
+            <Grid container spacing={0}>
+              <Grid xs={2}>
+                
+                <Routes>
+                  <Route
+                    path="/login"
+                    element={<></>}
+                  />
+                  <Route
+                    path="/*"
+                    element={<Sidebar />}
+                  />
+                </Routes>
 
-        <Box>
-          <Grid container spacing={0}>
-            <Grid xs={2}>
-              <Sidebar />
-            </Grid>
-            <Grid xs={10}>
-              <Headerbar />
+              </Grid>
+              <Grid xs={10}>
+                
+                <Routes>
+                  <Route
+                    path="/login"
+                    element={<></>}
+                  />
+                  <Route
+                    path="/*"
+                    element={<Headerbar />}
+                  />
+                </Routes>
+
               <div className='Dashboard-table'>
               <Routes> 
                 <Route 
                   path="/" 
+                  element={<RouteDashboard />} 
+                  />
+
+                <Route 
+                  path="/dashboard" 
                   element={<RouteDashboard />} 
                   />
 
@@ -69,6 +95,7 @@ const App = () => {
                 <Route path="/notificationlogs" element={<EmptyPage />} />
                 <Route path="/audit" element={<EmptyPage />} />
                 <Route path="/kioskhealth" element={<EmptyPage />} />
+                <Route path="/login" element={<Login />} />
 
               </Routes>
               </div>
