@@ -6,6 +6,9 @@ import './sidebar.css';
 import { Outlet, Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
+
+
+
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -46,6 +49,7 @@ const items = [
     getItem('Kiosk Health', '16', <WifiOutlined />),
     
   ]),
+  getItem('Logout', '18', <HomeOutlined />),
 ];
 
 // submenu keys of first level
@@ -176,6 +180,9 @@ const Sidebar = () => {
         break;
       case '16':
         window.location.href = '/kioskhealth';
+        break;
+      case '18':
+        window.location.href = '/login';
         break;
       default:
         console.log('Key not handled:', clickedKey);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, MailOutlined, SettingOutlined, EyeOutlined, HighlightOutlined } from '@ant-design/icons';
 import { Menu, Switch } from 'antd';
 import DataTable from 'react-data-table-component';
 import Accordion from 'react-bootstrap/Accordion';
@@ -88,7 +88,7 @@ const User = () => {
       if (event.target.name === 'selectAll') {
         // Handle "Select All" checkbox
         setSelectAllChecked(checked);
-        setSelectedRows(checked ? data : []);
+        //setSelectedRows(checked ? data : []);
       } else {
         // Handle individual checkboxes
         if (checked) {
@@ -106,98 +106,65 @@ const User = () => {
   };
   
     const columns = [
-        { field: 'id', headerName: 'Package ID', width: 130, flex: 1 },
-        { field: 'packageName', headerName: 'Package Name', width: 130, flex: 1 },
-        { field: 'imageVideo', headerName: 'Image/Video', width: 130, flex: 1 },
-        { field: 'fileType', headerName: 'File Type', width: 130, flex: 1 },
-        { field: 'startDate', headerName: 'Start Date', width: 130, flex: 1 },
-        { field: 'endDate', headerName: 'End Date', width: 130, flex: 1 },
-       
-        
-      ];
+  { field: 'id', headerName: 'Package ID', width: 130, flex: 1 },
+  {
+    field: 'viewButton',
+    headerName: '',
+    width: 100,
+    flex: 1,
+    renderCell: (params) => (
+      <Button
+        variant="contained"
+        color="primary"
+        className="view-button"
+        onClick={() => handleAddButtonClick(params.row)}
+      >
+       <EyeOutlined /> View
+      </Button>
+    ),
+  },
+  {
+    field: 'editButton',
+    headerName: '',
+    width: 100,
+    flex: 1,
+    renderCell: (params) => (
+      <Button
+        variant="contained"
+        color="primary"
+        className="edit-button"
+        onClick={() => handleAddButtonClick(params.row)}
+      >
+       <HighlightOutlined /> Edit
+      </Button>
+    ),
+  },
+  { field: 'packageName', headerName: 'Package Name', width: 130, flex: 1 },
+  { field: 'imageVideo', headerName: 'Image/Video', width: 130, flex: 1 },
+  { field: 'fileType', headerName: 'File Type', width: 130, flex: 1 },
+  { field: 'startDate', headerName: 'Start Date', width: 130, flex: 1 },
+  { field: 'endDate', headerName: 'End Date', width: 130, flex: 1 },
+];
+  const handleAddButtonClick = (rowData) => {
+    // Your logic to handle the button click for the specific row
+    console.log('Add button clicked for row:', rowData);
+  };
 
     const rows = [
-        { id: 123, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 234, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 345, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 456, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 567, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 678, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 789, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 888, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 901, imageVideo: 'image1.jpg', packageName: 'Ads Promotion', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 123, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 234, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 345, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 456, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 567, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 678, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 789, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 888, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 901, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+        { id: 905, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+      
       ];
       
-    const data = [
-
-        { 
-            packageName: 'Ads Promotion', 
-            packageID: 123, 
-            imagevideo: 'image1.jpg', 
-             
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
-            
-        },
-
-        { 
-            packageName: 'Ads Promotion', 
-            packageID: 124, 
-            imagevideo: 'image1.jpg', 
-             
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
-            
-        },
-
-        { 
-            packageName: 'Ads Promotion', 
-            packageID: 125, 
-            imagevideo: 'image1.jpg', 
-             
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
-            
-        },
-        
-        { 
-            packageName: 'Ads Promotion', 
-            packageID: 126, 
-            imagevideo: 'image1.jpg', 
-             
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
-            
-        },
-
-        { 
-            packageName: 'Ads Promotion', 
-            packageID: 127, 
-            imagevideo: 'image1.jpg', 
-             
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
-            
-        },
-
-        { 
-            packageName: 'Ads Promotion', 
-            packageID: 128, 
-            imagevideo: 'image1.jpg', 
-             
-            fileType: 'IMAGE', 
-            startDate: '24-10-2023', 
-            endDate: '24-01-2023',
-            
-        },
-
-        
-      ];
+    
       
       const handleSearch = (event) => {
         setSearchTerm(event.target.value);
@@ -211,30 +178,9 @@ const User = () => {
         setSortConfig({key, direction});
       };
     
-      const sortData = (data) => {
-        if (sortConfig.key) {
-          const sortedData = [...data];
-          sortedData.sort((a, b) => {
-            const keyA = a[sortConfig.key];
-            const keyB = b[sortConfig.key];
-            if (keyA < keyB) return sortConfig.direction === 'ascending' ? -1 : 1;
-            if (keyA > keyB) return sortConfig.direction === 'ascending' ? 1 : -1;
-            return 0;
-          });
-          return sortedData;
-        }
-        return data;
-      };
+      
 
-      const filteredData = sortData(
-        data.filter((item) =>
-          Object.values(item).some(
-            (value) =>
-              value &&
-              value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-          )
-        )
-      );
+      
 
   return (
     

@@ -1,15 +1,23 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 if (window.location.pathname === '/login') {
   import('../login/login.css');
 }
 
 const Login = () => {
+  const navigate = useNavigate(); // Initialize useHistory
+
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
+    // Perform login logic here
+
+    // Redirect to /dashboard
+    navigate('/dashboard');
   };
+
   return (
     <div className='formlogin'>
 
@@ -60,9 +68,9 @@ const Login = () => {
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
+          Sign in
         </Button>
-        Or <a href="">register now!</a>
+        
       </Form.Item>
     </Form>
     </div>

@@ -272,14 +272,14 @@ tr:nth-child(even) {
   border-color: #12CAF3;
   border-radius: 5px;
   color: white;
-  width: 45px;
+  width: 80px;
 }
 .edit-button {
   background-color: #F39C12;
   border-color: #F39C12;
   border-radius: 5px;
   color: white;
-  width: 45px;
+  width: 80px;
 }
 .add-and-delete-button {
   margin-left: 10px;

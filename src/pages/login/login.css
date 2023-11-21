@@ -12,7 +12,7 @@
     width: 100%;
 }
 .css-bytlsb-MuiGrid2-root {
-    width: 0px !important;
+    
 }
 
 :where(.css-dev-only-do-not-override-xu9wm8).ant-btn-primary {
@@ -38,5 +38,5 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .css-1pi8xg4-MuiGrid2-root {
-    --Grid-columns: 0 !important;
+    
 }
