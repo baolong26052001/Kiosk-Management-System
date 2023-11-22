@@ -299,3 +299,14 @@ tr:nth-child(even) {
 .center-align {
   text-align: center;
 }
+.css-4jnixx-MuiStack-root>.MuiTextField-root {
+  margin-left: 10px;
+  width: 100% !important;
+  min-width: 200px;
+}
+.css-2m9kme-MuiFormControl-root {
+  width: 100% !important;
+}
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  margin-right: 20px;
+}

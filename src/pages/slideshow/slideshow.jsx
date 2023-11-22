@@ -43,261 +43,261 @@ const MenuProps = {
 
 
 const User = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [selectedRows, setSelectedRows] = useState([]);
-    const [selectAllChecked, setSelectAllChecked] = useState(false);
-    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
-    const [searchTermButton, setSearchTermButton] = useState('');
-    const [valueStartDate, setValueStartDate] = React.useState(dayjs('2023-04-30'));
-    const [valueEndDate, setValueEndDate] = React.useState(dayjs('2023-04-30'));
-    const [packageName, setPackageName] = React.useState([]);
-    
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedRows, setSelectedRows] = useState([]);
+  const [selectAllChecked, setSelectAllChecked] = useState(false);
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
+  const [searchTermButton, setSearchTermButton] = useState('');
+  const [valueStartDate, setValueStartDate] = React.useState(dayjs('2023-04-30'));
+  const [valueEndDate, setValueEndDate] = React.useState(dayjs('2023-04-30'));
+  const [packageName, setPackageName] = React.useState([]);
 
-    const names = [
-      'Ads Promotion 1',
-      'Ads Promotion 2',
-      'Ads Promotion 3',
-    ];
 
-    const handleChange = (event) => {
-      const {
-        target: { value },
-      } = event;
-      setPackageName(
-        // On autofill we get a stringified value.
-        typeof value === 'string' ? value.split(',') : value,
-      );
-      
-    };
+  const names = [
+    'Ads Promotion 1',
+    'Ads Promotion 2',
+    'Ads Promotion 3',
+  ];
 
-    const handleSearchButton = () => {
-        setSearchTerm(searchTermButton);
-    };
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPackageName(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
 
-    const renderSortIcon = (columnKey) => {
-        if (sortConfig && sortConfig.key === columnKey) {
-          return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;
-        }
-        return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;;
-    };
-      
-
-    const handleCheckboxChange = (event, item) => {
-      const { checked } = event.target;
-  
-      if (event.target.name === 'selectAll') {
-        // Handle "Select All" checkbox
-        setSelectAllChecked(checked);
-        //setSelectedRows(checked ? data : []);
-      } else {
-        // Handle individual checkboxes
-        if (checked) {
-          // Add the selected item to the list
-          setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item.packageID]);
-        } else {
-          // Remove the selected item from the list
-          setSelectedRows((prevSelectedRows) =>
-            prevSelectedRows.filter(
-              (selectedItem) => selectedItem !== item.packageID
-            )
-          );
-        }
-      }
   };
-  
-    const columns = [
-  { field: 'id', headerName: 'Package ID', width: 130, flex: 1 },
-  {
-    field: 'viewButton',
-    headerName: '',
-    width: 100,
-    flex: 1,
-    renderCell: (params) => (
-      <Button
-        variant="contained"
-        color="primary"
-        className="view-button"
-        onClick={() => handleAddButtonClick(params.row)}
-      >
-       <EyeOutlined /> View
-      </Button>
-    ),
-  },
-  {
-    field: 'editButton',
-    headerName: '',
-    width: 100,
-    flex: 1,
-    renderCell: (params) => (
-      <Button
-        variant="contained"
-        color="primary"
-        className="edit-button"
-        onClick={() => handleAddButtonClick(params.row)}
-      >
-       <HighlightOutlined /> Edit
-      </Button>
-    ),
-  },
-  { field: 'packageName', headerName: 'Package Name', width: 130, flex: 1 },
-  { field: 'imageVideo', headerName: 'Image/Video', width: 130, flex: 1 },
-  { field: 'fileType', headerName: 'File Type', width: 130, flex: 1 },
-  { field: 'startDate', headerName: 'Start Date', width: 130, flex: 1 },
-  { field: 'endDate', headerName: 'End Date', width: 130, flex: 1 },
-];
+
+  const handleSearchButton = () => {
+    setSearchTerm(searchTermButton);
+  };
+
+  const renderSortIcon = (columnKey) => {
+    if (sortConfig && sortConfig.key === columnKey) {
+      return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;
+    }
+    return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;;
+  };
+
+
+  const handleCheckboxChange = (event, item) => {
+    const { checked } = event.target;
+
+    if (event.target.name === 'selectAll') {
+      // Handle "Select All" checkbox
+      setSelectAllChecked(checked);
+      //setSelectedRows(checked ? data : []);
+    } else {
+      // Handle individual checkboxes
+      if (checked) {
+        // Add the selected item to the list
+        setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item.packageID]);
+      } else {
+        // Remove the selected item from the list
+        setSelectedRows((prevSelectedRows) =>
+          prevSelectedRows.filter(
+            (selectedItem) => selectedItem !== item.packageID
+          )
+        );
+      }
+    }
+  };
+
+  const columns = [
+    { field: 'id', headerName: 'Package ID', width: 130, flex: 1 },
+    {
+      field: 'viewButton',
+      headerName: '',
+      width: 100,
+      flex: 1,
+      renderCell: (params) => (
+        <Button
+          variant="contained"
+          color="primary"
+          className="view-button"
+          onClick={() => handleAddButtonClick(params.row)}
+        >
+          <EyeOutlined /> View
+        </Button>
+      ),
+    },
+    {
+      field: 'editButton',
+      headerName: '',
+      width: 100,
+      flex: 1,
+      renderCell: (params) => (
+        <Button
+          variant="contained"
+          color="primary"
+          className="edit-button"
+          onClick={() => handleAddButtonClick(params.row)}
+        >
+          <HighlightOutlined /> Edit
+        </Button>
+      ),
+    },
+    { field: 'packageName', headerName: 'Package Name', width: 130, flex: 1 },
+    { field: 'imageVideo', headerName: 'Image/Video', width: 130, flex: 1 },
+    { field: 'fileType', headerName: 'File Type', width: 130, flex: 1 },
+    { field: 'startDate', headerName: 'Start Date', width: 130, flex: 1 },
+    { field: 'endDate', headerName: 'End Date', width: 130, flex: 1 },
+  ];
   const handleAddButtonClick = (rowData) => {
     // Your logic to handle the button click for the specific row
     console.log('Add button clicked for row:', rowData);
   };
 
-    const rows = [
-        { id: 123, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 234, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 345, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 456, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 567, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 678, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 789, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 888, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 901, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-        { id: 905, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
-      
-      ];
-      
-    
-      
-      const handleSearch = (event) => {
-        setSearchTerm(event.target.value);
-      };
-      
-      const handleSort = (key) => {
-        let direction = 'ascending';
-        if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
-          direction = 'descending';
-        }
-        setSortConfig({key, direction});
-      };
-    
-      
+  const rows = [
+    { id: 123, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 234, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 345, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 456, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 567, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 1', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 678, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 789, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 888, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 901, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
+    { id: 905, imageVideo: 'image1.jpg', packageName: 'Ads Promotion 2', fileType: 'IMAGE', startDate: '22-10-2023', endDate: '25-10-2023' },
 
-      
+  ];
+
+
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSort = (key) => {
+    let direction = 'ascending';
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    }
+    setSortConfig({ key, direction });
+  };
+
+
+
+
 
   return (
-    
-    <div class="content"> 
 
-        <div class="admin-dashboard-text-div"> 
-            
-            <h1 class="h1-dashboard">Video Slideshow Setup</h1>
+    <div class="content">
+
+      <div class="admin-dashboard-text-div">
+
+        <h1 class="h1-dashboard">Video Slideshow Setup</h1>
+      </div>
+
+
+
+      <div class="bigcard">
+
+
+
+
+        <Row gutter={12}>
+
+          <Col className="gutter-row" span={8}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={['DatePicker', 'DatePicker']}>
+                <DatePicker
+                  label="Start Date"
+                  value={valueStartDate}
+                  onChange={(newValue) => setValueStartDate(newValue)}
+                />
+
+              </DemoContainer>
+
+            </LocalizationProvider>
+          </Col>
+          <Col className="gutter-row" span={8}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={['DatePicker', 'DatePicker']}>
+                <DatePicker
+                  label="End Date"
+                  value={valueEndDate}
+                  onChange={(newValue) => setValueEndDate(newValue)}
+                />
+
+              </DemoContainer>
+
+            </LocalizationProvider>
+          </Col>
+          <Col className="gutter-row" span={8}>
+
+
+            <FormControl sx={{ m: 1, width: 300 }}>
+              <InputLabel id="package-name-label">Package Name</InputLabel>
+              <Select
+                labelId="package-name-label"
+                id="package-name"
+                multiple
+                value={packageName}
+                onChange={handleChange}
+                input={<OutlinedInput label="Package Name" />}
+                renderValue={(selected) => selected.join(', ')}
+                MenuProps={MenuProps}
+              >
+                {names.map((name) => (
+                  <MenuItem key={name} value={name}>
+                    <Checkbox checked={packageName.indexOf(name) > -1} />
+                    <ListItemText primary={name} />
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+          </Col>
+        </Row>
+
+
+
+        <div class="statusandimage">
+
         </div>
-        
-            
-        
-            <div class="bigcard">
-                
-                
+
+        <div class="searchdiv">
 
 
-                <Row gutter={16}>
-                        
-                        <Col className="gutter-row" span={8}>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                          <DemoContainer components={['DatePicker', 'DatePicker']}>
-                            <DatePicker
-                              label="Start Date"
-                              value={valueStartDate}
-                              onChange={(newValue) => setValueStartDate(newValue)}
-                            />
-                            
-                          </DemoContainer>
-                          
-                        </LocalizationProvider>
-                        </Col>
-                        <Col className="gutter-row" span={8}>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                          <DemoContainer components={['DatePicker', 'DatePicker']}>
-                            <DatePicker
-                              label="End Date"
-                              value={valueEndDate}
-                              onChange={(newValue) => setValueEndDate(newValue)}
-                            />
-                            
-                          </DemoContainer>
-                          
-                        </LocalizationProvider>
-                        </Col>
-                        <Col className="gutter-row" span={8}>
-                          <div>
-                            
-                            <FormControl sx={{ m: 1, width: 300 }}>
-                              <InputLabel id="package-name-label">Package Name</InputLabel>
-                              <Select
-                                labelId="package-name-label"
-                                id="package-name"
-                                multiple
-                                value={packageName}
-                                onChange={handleChange}
-                                input={<OutlinedInput label="Package Name" />}
-                                renderValue={(selected) => selected.join(', ')}
-                                MenuProps={MenuProps}
-                              >
-                                {names.map((name) => (
-                                  <MenuItem key={name} value={name}>
-                                    <Checkbox checked={packageName.indexOf(name) > -1} />
-                                    <ListItemText primary={name} />
-                                  </MenuItem>
-                                ))}
-                              </Select>
-                            </FormControl>
-                          </div>
-                        </Col>
-                </Row>
-                
-    
+          <input onChange={(event) => setSearchTermButton(event.target.value)} placeholder="  Search package ID..." type="text" id="packageID myInput" name="packageID" class="searchbar"></input>
 
-                <div class="statusandimage">
-                    
-                </div>
-                
-                <div class="searchdiv">
+          <input onClick={handleSearchButton} type="button" value="Search" class="button button-search"></input>
+        </div>
 
-                
-                    <input onChange={(event) => setSearchTermButton(event.target.value)} placeholder="  Search package ID..." type="text" id="packageID myInput" name="packageID" class="searchbar"></input>
-                    
-                    <input onClick={handleSearchButton} type="button" value="Search" class="button button-search"></input>
-                </div>
+        <div class="tablediv">
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            initialState={{
+              pagination: {
+                paginationModel: { page: 0, pageSize: 5 },
+              },
+            }}
+            pageSizeOptions={[5, 10]}
+            checkboxSelection
+          />
 
-                <div class="tablediv">
-                  <DataGrid
-                    rows={rows}
-                    columns={columns}
-                    initialState={{
-                      pagination: {
-                        paginationModel: { page: 0, pageSize: 5 },
-                      },
-                    }}
-                    pageSizeOptions={[5, 10]}
-                    checkboxSelection
-                  />                
-                
-                
-                
-                </div>
-                
 
-                
-                <div class="add-and-delete-button">
-                  <button class="add-button button">Add</button>
-                  <button class="delete-button button">Delete</button>
-                </div>
-                
-                
-            
-            </div>
 
-        
+        </div>
+
+
+
+        <div class="add-and-delete-button">
+          <button class="add-button button">Add</button>
+          <button class="delete-button button">Delete</button>
+        </div>
+
+
+
+      </div>
+
+
     </div>
-    
+
   )
 }
 
