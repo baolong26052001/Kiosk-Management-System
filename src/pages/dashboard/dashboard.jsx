@@ -13,6 +13,21 @@ import './dashboard.css';
 // import react bootstrap
 import { Container } from 'react-bootstrap';
 
+// import components MUI
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import ButtonBase from '@mui/material/ButtonBase';
+import { styled, withStyles } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import { color } from '@mui/system';
+import { blue } from '@mui/material/colors';
+
+
 
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -167,64 +182,155 @@ const Dashboard = () => {
             <p>Admin/Dashboard</p>
             <h1 class="h1-dashboard">Dashboard</h1>
         </div>
-        <div class="allcard">
-            <div class="card1">
-                <div class="area">
-                    <p class="kiosktext">Total kiosk</p>
-                    <div class="number-in-card">
-                        <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage percentage-green">(+10%)</p>
-                    </div>
-                    <p class="kiosktext last-week-analytic">Last week analytic</p>
-                </div>
-                <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/totalkiosk.png')}></img>
-                </div>
-            </div>
-            <div class="card2">
-                <div class="area">
-                    <p class="kiosktext">Total kiosk online</p>
-                    <div class="number-in-card">
-                        <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage percentage-red">(-29%)</p>
-                    </div>
-                    
-                    <p class="kiosktext last-week-analytic">Last week analytic</p>
-                </div>
-                <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/kioskonline.png')}></img>
-                </div>
-            </div>
-            <div class="card3">
-                <div class="area">
-                    <p class="kiosktext">Total kiosk offline</p>
-                    <div class="number-in-card">
-                        <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage percentage-green">(+10%)</p>
-                    </div>
-                    <p class="kiosktext last-week-analytic">Last week analytic</p>
-                </div>
-                <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/kioskoffline.png')}></img>
-                </div>
-            </div>
-            <div class="card4">
-                <div class="area">
-                    <p class="kiosktext">Total transaction</p>
-                    <div class="number-in-card">
-                        <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage percentage-green">(+10%)</p>
-                    </div>
-                    <div class="last-week-div">
-                        <p class="kiosktext last-week-analytic">Last week analytic</p>
-                    </div>
-                    
-                </div>
-                <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/transaction.png')}></img>
-                </div>
-            </div>
-        </div>
+
+    <div className='Card'>
+        <Grid className='Card-field' container spacing={2}>
+            <Grid item xs={3}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        margin: 'auto',
+                        maxWidth: 300,
+                        flexGrow: 1,
+                        backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+                    }}
+                    >
+                    <Grid container spacing={0}>
+                        <Grid className='Card-body' item xs={10} sm container>
+                            <Grid item>
+                            <Typography gutterBottom variant="subtitle1" component="h5">
+                                Total Kiosk
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                <Stack direction="row" spacing={2}> 
+                                    <div className='kiosk-num'>100</div>
+                                    <div className='percent' style={{color: '#12E95B'}}>(+18%)</div>
+                                </Stack>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Last Week Analytics
+                            </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                        <ButtonBase sx={{ width: 128, height: 128 }}>
+                            <img className="icon"  src={require('../../images/totalkiosk.png')}></img>
+                        </ButtonBase>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+            <Grid item xs={3}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        margin: 'auto',
+                        maxWidth: 300,
+                        flexGrow: 1,
+                        backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+                    }}
+                    >
+                    <Grid container spacing={0}>
+                        <Grid className='Card-body' item xs={10} sm container>
+                            <Grid item>
+                            <Typography gutterBottom variant="subtitle1" component="h5">
+                                Total Kiosk Online
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                <Stack direction="row" spacing={2}> 
+                                    <div className='kiosk-num'>99</div>
+                                    <div className='percent' style={{color: '#E92323'}}>(-1%)</div>
+                                </Stack>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Last Week Analytics
+                            </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                        <ButtonBase sx={{ width: 128, height: 128 }}>
+                            <img className="icon"  src={require('../../images/kioskonline.png')}></img>
+                        </ButtonBase>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+            <Grid item xs={3}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        margin: 'auto',
+                        maxWidth: 300,
+                        flexGrow: 1,
+                        backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+                    }}
+                    >
+                    <Grid container spacing={0}>
+                        <Grid className='Card-body' item xs={10} sm container>
+                            <Grid item>
+                            <Typography gutterBottom variant="subtitle1" component="h5">
+                                Total Kiosk Offline
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                <Stack direction="row" spacing={2}> 
+                                    <div className='kiosk-num'>1</div>
+                                    <div className='percent' style={{color: '#12E95B'}}>(+1%)</div>
+                                </Stack>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Last Week Analytics
+                            </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                        <ButtonBase sx={{ width: 128, height: 128 }}>
+                            <img className="icon"  src={require('../../images/kioskoffline.png')}></img>
+                        </ButtonBase>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+            <Grid item xs={3}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        margin: 'auto',
+                        maxWidth: 300,
+                        flexGrow: 1,
+                        backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+                    }}
+                    >
+                    <Grid container spacing={0}>
+                        <Grid className='Card-body' item xs={10} sm container>
+                            <Grid item>
+                            <Typography gutterBottom variant="subtitle1" component="h5">
+                                Total Transaction
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                <Stack direction="row" spacing={2}> 
+                                    <div className='kiosk-num'>100</div>
+                                    <div className='percent' style={{color: '#12E95B'}}>(+29%)</div>
+                                </Stack>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Last Week Analytics
+                            </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                        <ButtonBase sx={{ width: 128, height: 128 }}>
+                            <img className="icon"  src={require('../../images/transaction.png')}></img>
+                        </ButtonBase>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+        </Grid>
+    </div>
 
         
         
