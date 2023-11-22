@@ -140,10 +140,11 @@ h5 {
 .numberkiosk {
     height: 10px;
 }
-table {
+.Table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    margin-top: 20px;
 }
   
 td, th {
@@ -214,4 +215,8 @@ tr:nth-child(even) {
 }
 :where(.css-dev-only-do-not-override-xu9wm8).ant-menu-horizontal {
 	border-bottom: 0px solid rgba(5, 5, 5, 0.06) !important;
+}
+
+.MuiDataGrid-columnHeaderTitle.css-t89xny-MuiDataGrid-columnHeaderTitle {
+    font-weight: bold;
 }

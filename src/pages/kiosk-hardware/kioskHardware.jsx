@@ -4,8 +4,51 @@ import {EyeOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 //import Sidebar from '../components/sidebar/Sidebar';
 import { render } from '@testing-library/react';
 
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+
 //import css
 import './kiosk-hardware.css';
+
+const columns = [
+  { field: 'id', headerName: 'Kiosk ID', flex: 1 },
+  { field: 'kioskName', headerName: 'Kiosk Name', flex: 1 },
+  { field: 'stationCode', headerName: 'Station', flex: 1 },
+  {
+    field: 'kioskStatus',
+    headerName: 'Kiosk Heart Beat Update',
+    sortable: false,
+  //   type: 'number',
+      flex: 2,
+  },
+  {
+    field: 'camStatus',
+    headerName: 'Camera Last Update',
+    sortable: false,
+    flex: 2,
+  },
+  {
+      field: 'scannerStatus',
+      headerName: 'Scanner Last Update',
+      sortable: false,
+      flex: 2,
+  },
+  {
+      field: 'cashDeStatus',
+      headerName: 'Cash Deposit Last Update',
+      sortable: false,
+      flex: 2,
+   },
+];
+
+const rows = [
+  { id: 1, kioskName: 'K001', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 2, kioskName: 'K002', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 3, kioskName: 'K003', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 4, kioskName: 'K004', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 5, kioskName: 'K005', stationCode: 'Ha Noi', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 6, kioskName: 'K006', stationCode: 'Binh Duong', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+
+];
 
 const KioskHardware = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -19,104 +62,9 @@ const KioskHardware = () => {
         setSearchTerm(searchTermButton);
     };
 
-    const renderSortIcon = (columnKey) => {
-        if (sortConfig && sortConfig.key === columnKey) {
-          return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;
-        }
-        return sortConfig.direction === 'ascending' ? <span class="arrow">&#9660;</span> : <span class="arrow">&#9650;</span>;;
-    };
-      
 
-    const handleCheckboxChange = (event, item) => {
-      const { checked } = event.target;
-  
-      if (event.target.name === 'selectAll') {
-        // Handle "Select All" checkbox
-        setSelectAllChecked(checked);
-        setSelectedRows(checked ? data : []);
-      } else {
-        // Handle individual checkboxes
-        if (checked) {
-          // Add the selected item to the list
-          setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item.kioskID]);
-        } else {
-          // Remove the selected item from the list
-          setSelectedRows((prevSelectedRows) =>
-            prevSelectedRows.filter(
-              (selectedItem) => selectedItem !== item.kioskID
-            )
-          );
-        }
-      }
-  };
 
-    const data = [
 
-        { 
-            availbleMemory: '120 GB', 
-            kioskID: 123, 
-            LanIPAddress: '172.18.1.32', 
-            OSName: 'Windows 10 Enterprise', 
-            OSPlatform: 'Windows', 
-            OSVersion: 'Microsoft Windows NT 6.2.9.9200.0'
-        },
-        
-        { 
-            availbleMemory: '120 GB', 
-            kioskID: 101, 
-            LanIPAddress: '172.18.1.35', 
-            OSName: 'Windows 10 Enterprise', 
-            OSPlatform: 'Windows', 
-            OSVersion: 'Microsoft Windows NT 6.2.9.9200.0'
-        },
-
-        { 
-            availbleMemory: '120 GB', 
-            kioskID: 725, 
-            LanIPAddress: '172.18.1.36', 
-            OSName: 'Windows 10 Enterprise', 
-            OSPlatform: 'Windows', 
-            OSVersion: 'Microsoft Windows NT 6.2.9.9200.0'
-        },
-        
-      ];
-      
-      const handleSearch = (event) => {
-        setSearchTerm(event.target.value);
-      };
-      
-      const handleSort = (key) => {
-        let direction = 'ascending';
-        if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
-          direction = 'descending';
-        }
-        setSortConfig({key, direction});
-      };
-    
-      const sortData = (data) => {
-        if (sortConfig.key) {
-          const sortedData = [...data];
-          sortedData.sort((a, b) => {
-            const keyA = a[sortConfig.key];
-            const keyB = b[sortConfig.key];
-            if (keyA < keyB) return sortConfig.direction === 'ascending' ? -1 : 1;
-            if (keyA > keyB) return sortConfig.direction === 'ascending' ? 1 : -1;
-            return 0;
-          });
-          return sortedData;
-        }
-        return data;
-      };
-
-      const filteredData = sortData(
-        data.filter((item) =>
-          Object.values(item).some(
-            (value) =>
-              value &&
-              value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-          )
-        )
-      );
 
   return (
     
@@ -138,69 +86,22 @@ const KioskHardware = () => {
                     <input onClick={handleSearchButton} type="button" value="Search" class="button button-search"></input>
                 </div>
 
-                <div class="tablediv">
+                
+                <div className='Table' style={{ height: 400, width: '100%'}}>
+                    <DataGrid
+                        rows={rows}
+                        columns={columns}
+                        initialState={{
+                        pagination: {
+                            paginationModel: { page: 0, pageSize: 5 },
+                        },
+                        }}
+                        pageSizeOptions={[5, 10]}
+                        checkboxSelection
+                    />
+                </div>
 
-                
-                <table id="myTable">
-                    <thead>
-                        <tr>
-                        <th>
-                            <input
-                            type="checkbox"
-                            name="selectAll"
-                            checked={selectAllChecked}
-                            onChange={(event) => handleCheckboxChange(event, null)}
-                            />
-                        </th>
-                        <th></th>
-                        <th onClick={() => handleSort('kioskID')}>Kiosk ID {renderSortIcon('kioskID')}</th>
-                        <th onClick={() => handleSort('availbleMemory')}>Availble Memory {renderSortIcon('availbleMemory')}</th>
-                        <th onClick={() => handleSort('LanIPAddress')}>LanIPAddress {renderSortIcon('LanIPAddress')}</th>
-                        <th onClick={() => handleSort('OSName')}>OS Name {renderSortIcon('OSName')}</th>
-                        <th onClick={() => handleSort('OSPlatform')}>OS Platform {renderSortIcon('OSPlatform')}</th>
-                        <th onClick={() => handleSort('OSVersion')}>OS Version {renderSortIcon('OSVersion')}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredData.map((item, index) => (
-                        <tr key={index}>
-                          <td>
-                                <input
-                                type="checkbox"
-                                checked={selectAllChecked || selectedRows.includes(item.kioskID)}
-                                onChange={(event) => handleCheckboxChange(event, item)}
-                                />
-                            </td>
-                            <td>
-                            <button class="view-button"><EyeOutlined /> View</button>
-                            </td>
-                            <td>{item.kioskID}</td>
-                            <td>{item.availbleMemory}</td>
-                            <td>{item.LanIPAddress}</td>
-                            <td>{item.OSName}</td>
-                            <td>{item.OSPlatform}</td>
-                            <td>{item.OSVersion}</td>
-                        </tr>
-                        ))}
-                    </tbody>
-                </table>
-                
-                </div>
-                
 
-                <div class="pageselectdashboard">
-                    <p class="rowperpagedash">Rows per page</p>
-                    <select class="listoptiondash">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select>
-                </div>
-                <div class="add-and-delete-button">
-                  <button class="add-button button"><PlusOutlined /> Add</button>
-                  <button class="delete-button button"><DeleteOutlined /> Delete</button>
-                </div>
                 
                 
             
