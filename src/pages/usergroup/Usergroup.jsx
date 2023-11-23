@@ -6,6 +6,7 @@ import { render } from '@testing-library/react';
 
 //import css
 import './Usergroup.css';
+import UserFilter from './userFilter';
 
 // import components from MUI
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
@@ -133,7 +134,7 @@ const Usergroup = () => {
         <div className="bigcarddashboard">
 
           <div className='Filter'>
-          
+            <UserFilter />
           </div>
 
           <div className="searchdivuser">
