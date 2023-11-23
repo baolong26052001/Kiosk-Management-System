@@ -10,43 +10,48 @@ import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import './User.css';
 
 const columns = [
-  { field: 'id', headerName: 'Kiosk ID', flex: 1 },
-  { field: 'kioskName', headerName: 'Kiosk Name', flex: 1 },
-  { field: 'stationCode', headerName: 'Station', flex: 1 },
+  { field: 'id', headerName: 'User ID', flex: 1 },
+  { field: 'userName', headerName: 'User Name', flex: 2 },
+  { field: 'email', headerName: 'Email', flex: 2 },
   {
-    field: 'kioskStatus',
-    headerName: 'Kiosk Heart Beat Update',
+    field: 'userGroup',
+    headerName: 'User Group',
     sortable: false,
   //   type: 'number',
       flex: 2,
   },
   {
-    field: 'camStatus',
-    headerName: 'Camera Last Update',
+    field: 'active',
+    headerName: 'Active',
     sortable: false,
-    flex: 2,
+    flex: 1,
   },
   {
-      field: 'scannerStatus',
-      headerName: 'Scanner Last Update',
+      field: 'lastLogin',
+      headerName: 'Last Login',
       sortable: false,
       flex: 2,
   },
   {
-      field: 'cashDeStatus',
-      headerName: 'Cash Deposit Last Update',
+      field: 'daysDormant',
+      headerName: 'Total Days Dormant',
       sortable: false,
       flex: 2,
    },
 ];
 
 const rows = [
-  { id: 1, kioskName: 'K001', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
-  { id: 2, kioskName: 'K002', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
-  { id: 3, kioskName: 'K003', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
-  { id: 4, kioskName: 'K004', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
-  { id: 5, kioskName: 'K005', stationCode: 'Ha Noi', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
-  { id: 6, kioskName: 'K006', stationCode: 'Binh Duong', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 1, userName: 'Richard Nixon', email: 'richnix@gmail.com', userGroup: 'Administration', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 2, userName: 'Riadxon', email: 'ricx@gmail.com', userGroup: 'Support', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 3, userName: 'Nixn', email: 'nix@gmail.com', userGroup: 'Monitor', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 4, userName: 'Tayos', email: 'tayos@gmail.com', userGroup: 'Support', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 5, userName: 'Chad', email: 'Chadman@gmail.com', userGroup: 'Manager', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 6, userName: 'Stein', email: 'stein@gmail.com', userGroup: 'Support', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 7, userName: 'Lloyd', email: 'lloyd@gmail.com', userGroup: 'Administration', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 8, userName: 'Tessta', email: 'tessta@gmail.com', userGroup: 'Administration', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 9, userName: 'Carena', email: 'carena@gmail.com', userGroup: 'Administration', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+  { id: 10, userName: 'Wals', email: 'wals@gmail.com', userGroup: 'Administration', active: 'Yes', lastLogin: '24-12-2023 14:32:43', daysDormant: '10' },
+
 
 ];
 
