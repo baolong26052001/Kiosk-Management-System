@@ -1,79 +1,116 @@
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-// import OutlinedInput from '@mui/material/OutlinedInput';
-// import InputLabel from '@mui/material/InputLabel';
-// import MenuItem from '@mui/material/MenuItem';
-// import FormControl from '@mui/material/FormControl';
-// import Select from '@mui/material/Select';
+import React, { useState, useEffect } from 'react';
+import {EyeOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+//import Sidebar from '../components/sidebar/Sidebar';
+import { render } from '@testing-library/react';
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+
+//import css
+import './kiosk-setup.css';
+
+const columns = [
+  { field: 'id', headerName: 'Kiosk ID', flex: 1 },
+  { field: 'kioskName', headerName: 'Kiosk Name', flex: 1 },
+  { field: 'stationCode', headerName: 'Station', flex: 1 },
+  {
+    field: 'kioskStatus',
+    headerName: 'Kiosk Heart Beat Update',
+    sortable: false,
+  //   type: 'number',
+      flex: 2,
   },
-};
-
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
+  {
+    field: 'camStatus',
+    headerName: 'Camera Last Update',
+    sortable: false,
+    flex: 2,
+  },
+  {
+      field: 'scannerStatus',
+      headerName: 'Scanner Last Update',
+      sortable: false,
+      flex: 2,
+  },
+  {
+      field: 'cashDeStatus',
+      headerName: 'Cash Deposit Last Update',
+      sortable: false,
+      flex: 2,
+   },
 ];
 
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
+const rows = [
+  { id: 1, kioskName: 'K001', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 2, kioskName: 'K002', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 3, kioskName: 'K003', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 4, kioskName: 'K004', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 5, kioskName: 'K005', stationCode: 'Ha Noi', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+  { id: 6, kioskName: 'K006', stationCode: 'Binh Duong', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
 
-export default function KioskSetup() {
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
+];
 
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
+const KioskHardware = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedRows, setSelectedRows] = useState([]);
+    const [selectAllChecked, setSelectAllChecked] = useState(false);
+    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
+
+    const [searchTermButton, setSearchTermButton] = useState('');
+
+    const handleSearchButton = () => {
+        setSearchTerm(searchTermButton);
+    };
+
+
+
+
 
   return (
-    <div>
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DatePicker']}>
-        <DatePicker label="Basic date picker" />
-      </DemoContainer>
-    </LocalizationProvider>
-    </div>
-  );
-}
-// const KioskSetup = () => {
-//   return (
-//     <div>
-        
-//     </div>
-//   )
-// }
+    
+    <div className="content"> 
 
-// export default KioskSetup
+        <div className="admin-dashboard-text-div pt-5"> 
+            <h1 className="h1-dashboard">Kiosk Setup</h1>
+        </div>
+            <div className="bigcarddashboard">
+                <div className="statusandimage">
+                    
+                </div>
+                
+                <div className="searchdivuser">
+
+                
+                    <input onChange={(event) => setSearchTermButton(event.target.value)} placeholder="  Search..." type="text" id="kioskID myInput" name="kioskID" class="searchbar"></input>
+                    
+                    <input onClick={handleSearchButton} type="button" value="Search" className="button button-search"></input>
+                </div>
+
+                
+                <div className='Table' style={{ height: 400, width: '100%'}}>
+                    <DataGrid
+                        rows={rows}
+                        columns={columns}
+                        initialState={{
+                        pagination: {
+                            paginationModel: { page: 0, pageSize: 5 },
+                        },
+                        }}
+                        pageSizeOptions={[5, 10]}
+                        checkboxSelection
+                    />
+                </div>
+
+
+                
+                
+            
+            </div>
+
+        
+    </div>
+    
+  )
+}
+
+export default KioskHardware;

@@ -13,6 +13,61 @@ import './dashboard.css';
 // import react bootstrap
 import { Container } from 'react-bootstrap';
 
+// import components MUI
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import ButtonBase from '@mui/material/ButtonBase';
+import { styled, withStyles } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { auto } from '@popperjs/core';
+
+
+const columns = [
+    { field: 'id', headerName: 'Kiosk ID', flex: 1 },
+    { field: 'kioskName', headerName: 'Kiosk Name', flex: 1 },
+    { field: 'stationCode', headerName: 'Station', flex: 1 },
+    {
+      field: 'kioskStatus',
+      headerName: 'Kiosk Heart Beat Update',
+      sortable: false,
+    //   type: 'number',
+        flex: 2,
+    },
+    {
+      field: 'camStatus',
+      headerName: 'Camera Last Update',
+      sortable: false,
+      flex: 2,
+    },
+    {
+        field: 'scannerStatus',
+        headerName: 'Scanner Last Update',
+        sortable: false,
+        flex: 2,
+    },
+    {
+        field: 'cashDeStatus',
+        headerName: 'Cash Deposit Last Update',
+        sortable: false,
+        flex: 2,
+     },
+  ];
+
+  const rows = [
+    { id: 1, kioskName: 'K001', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+    { id: 2, kioskName: 'K002', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+    { id: 3, kioskName: 'K003', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+    { id: 4, kioskName: 'K004', stationCode: 'SaiGon', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+    { id: 5, kioskName: 'K005', stationCode: 'Ha Noi', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+    { id: 6, kioskName: 'K006', stationCode: 'Binh Duong', kioskStatus: '24-12-2023', camStatus: '24-12-2023', scannerStatus: '24-12-2023', cashDeStatus: '24-12-2023' },
+
+  ];
 
 const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -34,130 +89,109 @@ const Dashboard = () => {
     };
       
 
-    const handleCheckboxChange = (event, item) => {
-        const { checked } = event.target;
-    
-        if (event.target.name === 'selectAll') {
-          // Handle "Select All" checkbox
-          setSelectAllChecked(checked);
-          setSelectedRows(checked ? data : []);
-        } else {
-          // Handle individual checkboxes
-          if (checked) {
-            // Add the selected item to the list
-            setSelectedRows((prevSelectedRows) => [...prevSelectedRows, item.kioskID]);
-          } else {
-            // Remove the selected item from the list
-            setSelectedRows((prevSelectedRows) =>
-              prevSelectedRows.filter(
-                (selectedItem) => selectedItem !== item.kioskID
-              )
-            );
-          }
-        }
-    };
 
-    const data = [
 
-        { 
-            kioskName: 'Kiosk 123', 
-            kioskID: 123, 
-            stationCode: 258, 
-            heartbeatUpdate: '24-01-2023', 
-            cameraUpdate: '24-01-2023', 
-            scannerUpdate: '24-01-2023', 
-            cashDepositUpdate: '24-01-2023'
-        },
+    // const data = [
 
-        { 
-            kioskName: 'Kiosk 124', 
-            kioskID: 124, 
-            stationCode: 258, 
-            heartbeatUpdate: '24-01-2023', 
-            cameraUpdate: '24-01-2023', 
-            scannerUpdate: '24-01-2023', 
-            cashDepositUpdate: '24-01-2023' 
-        },
+    //     { 
+    //         kioskName: 'Kiosk 123', 
+    //         kioskID: 123, 
+    //         stationCode: 258, 
+    //         heartbeatUpdate: '24-01-2023', 
+    //         cameraUpdate: '24-01-2023', 
+    //         scannerUpdate: '24-01-2023', 
+    //         cashDepositUpdate: '24-01-2023'
+    //     },
 
-        { 
-            kioskName: 'Kiosk 125', 
-            kioskID: 125, 
-            stationCode: 258, 
-            heartbeatUpdate: '24-01-2023', 
-            cameraUpdate: '24-01-2023', 
-            scannerUpdate: '24-01-2023', 
-            cashDepositUpdate: '24-01-2023' 
-        },
+    //     { 
+    //         kioskName: 'Kiosk 124', 
+    //         kioskID: 124, 
+    //         stationCode: 258, 
+    //         heartbeatUpdate: '24-01-2023', 
+    //         cameraUpdate: '24-01-2023', 
+    //         scannerUpdate: '24-01-2023', 
+    //         cashDepositUpdate: '24-01-2023' 
+    //     },
+
+    //     { 
+    //         kioskName: 'Kiosk 125', 
+    //         kioskID: 125, 
+    //         stationCode: 258, 
+    //         heartbeatUpdate: '24-01-2023', 
+    //         cameraUpdate: '24-01-2023', 
+    //         scannerUpdate: '24-01-2023', 
+    //         cashDepositUpdate: '24-01-2023' 
+    //     },
         
-        { 
-            kioskName: 'Kiosk 126', 
-            kioskID: 126, 
-            stationCode: 3213, 
-            heartbeatUpdate: '24-01-2023', 
-            cameraUpdate: '24-01-2023', 
-            scannerUpdate: '24-01-2023', 
-            cashDepositUpdate: '24-01-2023' 
-        },
+    //     { 
+    //         kioskName: 'Kiosk 126', 
+    //         kioskID: 126, 
+    //         stationCode: 3213, 
+    //         heartbeatUpdate: '24-01-2023', 
+    //         cameraUpdate: '24-01-2023', 
+    //         scannerUpdate: '24-01-2023', 
+    //         cashDepositUpdate: '24-01-2023' 
+    //     },
 
-        { 
-            kioskName: 'Kiosk 127', 
-            kioskID: 127, 
-            stationCode: 3213, 
-            heartbeatUpdate: '24-01-2023', 
-            cameraUpdate: '24-01-2023', 
-            scannerUpdate: '24-01-2023', 
-            cashDepositUpdate: '24-01-2023' 
-        },
+    //     { 
+    //         kioskName: 'Kiosk 127', 
+    //         kioskID: 127, 
+    //         stationCode: 3213, 
+    //         heartbeatUpdate: '24-01-2023', 
+    //         cameraUpdate: '24-01-2023', 
+    //         scannerUpdate: '24-01-2023', 
+    //         cashDepositUpdate: '24-01-2023' 
+    //     },
 
-        { 
-            kioskName: 'Kiosk 128', 
-            kioskID: 128, 
-            stationCode: 3213, 
-            heartbeatUpdate: '24-01-2023', 
-            cameraUpdate: '24-01-2023', 
-            scannerUpdate: '24-01-2023', 
-            cashDepositUpdate: '24-01-2023' 
-        },
+    //     { 
+    //         kioskName: 'Kiosk 128', 
+    //         kioskID: 128, 
+    //         stationCode: 3213, 
+    //         heartbeatUpdate: '24-01-2023', 
+    //         cameraUpdate: '24-01-2023', 
+    //         scannerUpdate: '24-01-2023', 
+    //         cashDepositUpdate: '24-01-2023' 
+    //     },
 
         
-      ];
+    //   ];
       
-      const handleSearch = (event) => {
-        setSearchTerm(event.target.value);
-      };
+    //   const handleSearch = (event) => {
+    //     setSearchTerm(event.target.value);
+    //   };
       
-      const handleSort = (key) => {
-        let direction = 'ascending';
-        if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
-          direction = 'descending';
-        }
-        setSortConfig({ key, direction });
-      };
+    //   const handleSort = (key) => {
+    //     let direction = 'ascending';
+    //     if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
+    //       direction = 'descending';
+    //     }
+    //     setSortConfig({ key, direction });
+    //   };
     
-      const sortData = (data) => {
-        if (sortConfig.key) {
-          const sortedData = [...data];
-          sortedData.sort((a, b) => {
-            const keyA = a[sortConfig.key];
-            const keyB = b[sortConfig.key];
-            if (keyA < keyB) return sortConfig.direction === 'ascending' ? -1 : 1;
-            if (keyA > keyB) return sortConfig.direction === 'ascending' ? 1 : -1;
-            return 0;
-          });
-          return sortedData;
-        }
-        return data;
-      };
+    //   const sortData = (data) => {
+    //     if (sortConfig.key) {
+    //       const sortedData = [...data];
+    //       sortedData.sort((a, b) => {
+    //         const keyA = a[sortConfig.key];
+    //         const keyB = b[sortConfig.key];
+    //         if (keyA < keyB) return sortConfig.direction === 'ascending' ? -1 : 1;
+    //         if (keyA > keyB) return sortConfig.direction === 'ascending' ? 1 : -1;
+    //         return 0;
+    //       });
+    //       return sortedData;
+    //     }
+    //     return data;
+    //   };
 
-      const filteredData = sortData(
-        data.filter((item) =>
-          Object.values(item).some(
-            (value) =>
-              value &&
-              value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-          )
-        )
-      );
+    //   const filteredData = sortData(
+    //     data.filter((item) =>
+    //       Object.values(item).some(
+    //         (value) =>
+    //           value &&
+    //           value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+    //       )
+    //     )
+    //   );
 
   return (
     
@@ -167,64 +201,155 @@ const Dashboard = () => {
             <p>Admin/Dashboard</p>
             <h1 class="h1-dashboard">Dashboard</h1>
         </div>
-        <div class="allcard">
-            <div class="card1">
-                <div class="area">
-                    <p class="kiosktext">Total kiosk</p>
-                    <div class="number-in-card">
-                        <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage percentage-green">(+10%)</p>
-                    </div>
-                    <p class="kiosktext last-week-analytic">Last week analytic</p>
-                </div>
-                <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/totalkiosk.png')}></img>
-                </div>
-            </div>
-            <div class="card2">
-                <div class="area">
-                    <p class="kiosktext">Total kiosk online</p>
-                    <div class="number-in-card">
-                        <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage percentage-red">(-29%)</p>
-                    </div>
-                    
-                    <p class="kiosktext last-week-analytic">Last week analytic</p>
-                </div>
-                <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/kioskonline.png')}></img>
-                </div>
-            </div>
-            <div class="card3">
-                <div class="area">
-                    <p class="kiosktext">Total kiosk offline</p>
-                    <div class="number-in-card">
-                        <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage percentage-green">(+10%)</p>
-                    </div>
-                    <p class="kiosktext last-week-analytic">Last week analytic</p>
-                </div>
-                <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/kioskoffline.png')}></img>
-                </div>
-            </div>
-            <div class="card4">
-                <div class="area">
-                    <p class="kiosktext">Total transaction</p>
-                    <div class="number-in-card">
-                        <h2 class="kiosktext numberkiosk">100</h2>
-                        <p class="percentage percentage-green">(+10%)</p>
-                    </div>
-                    <div class="last-week-div">
-                        <p class="kiosktext last-week-analytic">Last week analytic</p>
-                    </div>
-                    
-                </div>
-                <div class="area2">
-                    <img class="iconinwhitebox" width="50px" height="50px" src={require('../../images/transaction.png')}></img>
-                </div>
-            </div>
-        </div>
+
+    <div className='Card'>
+        <Grid className='Card-field' container spacing={2}>
+            <Grid item xs={3}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        margin: 'auto',
+                        maxWidth: 300,
+                        flexGrow: 1,
+                        backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+                    }}
+                    >
+                    <Grid container spacing={0}>
+                        <Grid className='Card-body' item xs={10} sm container>
+                            <Grid item>
+                            <Typography gutterBottom variant="subtitle1" component="h5">
+                                Total Kiosk
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                <Stack direction="row" spacing={2}> 
+                                    <div className='kiosk-num'>100</div>
+                                    <div className='percent' style={{color: '#12E95B'}}>(+18%)</div>
+                                </Stack>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Last Week Analytics
+                            </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                        <ButtonBase sx={{ width: 128, height: 128 }}>
+                            <img className="icon"  src={require('../../images/totalkiosk.png')}></img>
+                        </ButtonBase>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+            <Grid item xs={3}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        margin: 'auto',
+                        maxWidth: 300,
+                        flexGrow: 1,
+                        backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+                    }}
+                    >
+                    <Grid container spacing={0}>
+                        <Grid className='Card-body' item xs={10} sm container>
+                            <Grid item>
+                            <Typography gutterBottom variant="subtitle1" component="h5">
+                                Total Kiosk Online
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                <Stack direction="row" spacing={2}> 
+                                    <div className='kiosk-num'>99</div>
+                                    <div className='percent' style={{color: '#E92323'}}>(-1%)</div>
+                                </Stack>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Last Week Analytics
+                            </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                        <ButtonBase sx={{ width: 128, height: 128 }}>
+                            <img className="icon"  src={require('../../images/kioskonline.png')}></img>
+                        </ButtonBase>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+            <Grid item xs={3}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        margin: 'auto',
+                        maxWidth: 300,
+                        flexGrow: 1,
+                        backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+                    }}
+                    >
+                    <Grid container spacing={0}>
+                        <Grid className='Card-body' item xs={10} sm container>
+                            <Grid item>
+                            <Typography gutterBottom variant="subtitle1" component="h5">
+                                Total Kiosk Offline
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                <Stack direction="row" spacing={2}> 
+                                    <div className='kiosk-num'>1</div>
+                                    <div className='percent' style={{color: '#12E95B'}}>(+1%)</div>
+                                </Stack>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Last Week Analytics
+                            </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                        <ButtonBase sx={{ width: 128, height: 128 }}>
+                            <img className="icon"  src={require('../../images/kioskoffline.png')}></img>
+                        </ButtonBase>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+            <Grid item xs={3}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        margin: 'auto',
+                        maxWidth: 300,
+                        flexGrow: 1,
+                        backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+                    }}
+                    >
+                    <Grid container spacing={0}>
+                        <Grid className='Card-body' item xs={10} sm container>
+                            <Grid item>
+                            <Typography gutterBottom variant="subtitle1" component="h5">
+                                Total Transaction
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                <Stack direction="row" spacing={2}> 
+                                    <div className='kiosk-num'>100</div>
+                                    <div className='percent' style={{color: '#12E95B'}}>(+29%)</div>
+                                </Stack>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Last Week Analytics
+                            </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                        <ButtonBase sx={{ width: 128, height: 128 }}>
+                            <img className="icon"  src={require('../../images/transaction.png')}></img>
+                        </ButtonBase>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+        </Grid>
+    </div>
 
         
         
@@ -242,69 +367,22 @@ const Dashboard = () => {
                 </div>
                 
                 <div class="searchdiv">
-
-                
-                    <input onChange={(event) => setSearchTermButton(event.target.value)} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input>
-                    
+                    <input onChange={(event) => setSearchTermButton(event.target.value)} placeholder="  Search kiosk ID..." type="text" id="kioskid myInput" name="kioskid" class="searchbar"></input> 
                     <input onClick={handleSearchButton} type="button" value="Search" class="button button-search"></input>
                 </div>
 
-                <div class="tablediv">
-
-                
-                <table id="myTable">
-                    <thead>
-                        <tr>
-                        
-                        <th onClick={() => handleSort('kioskName')}>Kiosk Name {renderSortIcon('kioskName')}</th>
-                        <th onClick={() => handleSort('kioskID')}>Kiosk ID {renderSortIcon('kioskID')}</th>
-                        <th onClick={() => handleSort('stationCode')}>Station Code {renderSortIcon('stationCode')}</th>
-                        <th onClick={() => handleSort('heartbeatUpdate')}>Kiosk Heartbeat Last Update {renderSortIcon('heartbeatUpdate')}</th>
-                        <th onClick={() => handleSort('cameraUpdate')}>Camera Last Update {renderSortIcon('cameraUpdate')}</th>
-                        <th onClick={() => handleSort('scannerUpdate')}>Scanner Last Update {renderSortIcon('scannerUpdate')}</th>
-                        <th onClick={() => handleSort('cashDepositUpdate')}>Cash Deposit Last Update {renderSortIcon('cashDepositUpdate')}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredData.map((item, index) => (
-                        <tr key={index}>
-                            
-                            <td>{item.kioskName}</td>
-                            <td>{item.kioskID}</td>
-                            <td>{item.stationCode}</td>
-                            <td>
-                                <img class="icononlinetable" width="10px" height="10px" src={require('../../images/online.png')}></img>
-                                {item.heartbeatUpdate}
-                            </td>
-                            <td>
-                                <img class="icononlinetable" width="10px" height="10px" src={require('../../images/online.png')}></img>
-                                {item.cameraUpdate}
-                            </td>
-                            <td>
-                                <img class="icononlinetable" width="10px" height="10px" src={require('../../images/online.png')}></img>
-                                {item.scannerUpdate}
-                            </td>
-                            <td>
-                                <img class="icononlinetable" width="10px" height="10px" src={require('../../images/online.png')}></img>
-                                {item.cashDepositUpdate}
-                            </td>
-                        </tr>
-                        ))}
-                    </tbody>
-                </table>
-                
-                </div>
-                
-
-                <div class="pageselectdashboard">
-                    <p class="rowperpagedash">Rows per page</p>
-                    <select class="listoptiondash">
-                        
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select>
+                <div className='Table' style={{ height: 400, width: '100%'}}>
+                    <DataGrid
+                        rows={rows}
+                        columns={columns}
+                        initialState={{
+                        pagination: {
+                            paginationModel: { page: 0, pageSize: 5 },
+                        },
+                        }}
+                        pageSizeOptions={[5, 10]}
+                        checkboxSelection
+                    />
                 </div>
                 
             
